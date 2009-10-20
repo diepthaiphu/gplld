@@ -1,0 +1,35 @@
+#################################################
+## PHP Link Directory - Apache Server Settings ##
+#################################################
+
+# Protect files
+<Files ~ "^(.*)\.(inc|inc\.php|tpl|sql)$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+# Protect directories
+<Files ~ "^(files|images|include|lang|libs(/.+)?|temp(/.+)?|templates(/.+)?|javascripts(/.+)?)$">
+  Order deny,allow
+  Deny from all
+</Files>
+
+# Disable directory browsing
+Options -Indexes
+
+# Follow symbolic links in this directory
+Options +FollowSymLinks
+
+# Set the default handler
+DirectoryIndex index.php
+
+# URL rewrite rules
+<IfModule mod_rewrite.c>
+   RewriteEngine On
+
+   ## Category redirect
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-l
+   RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
