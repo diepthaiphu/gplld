@@ -11,7 +11,7 @@
 <div id="body-container">
 <div id="navigation">
 	<div class="">
-		{include file="navigation.tpl"}
+		{include file="admin/navigation.tpl"}
 	</div>
 </div>
 <div id="header-container">
