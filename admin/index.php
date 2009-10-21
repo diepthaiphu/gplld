@@ -39,7 +39,7 @@ $tpl->clear_all_cache();
 //Clear all compiled template files
 $tpl->clear_compiled_tpl();
 
-$url = get_url('http://www.phplinkdirectory.com/current.php', URL_CONTENT, $_SERVER['SERVER_NAME'].request_uri());
+$url = get_url('http://api.gplld.com/version/', URL_CONTENT, $_SERVER['SERVER_NAME'].request_uri());
 $sv  = parse_version($url['content']);
 $cv  = parse_version(CURRENT_VERSION);
 
@@ -74,7 +74,7 @@ $stats[5] = $db->GetOne("SELECT COUNT(*) FROM `{$tables['email_tpl']['name']}`")
 //phpLinkDirectory News
 if (ENABLE_NEWS)
 {
-   $url = get_url("http://www.phplinkdirectory.com/news.php", URL_CONTENT);
+   $url = get_url("http://api.gplld.com/news/", URL_CONTENT);
    if ($url['status'])
    {
       $news = parse_news($url['content']);
