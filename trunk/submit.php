@@ -32,6 +32,9 @@
 */
 
 require_once 'init.php';
+# Load reCaptcha
+require_once 'libs/recaptcha/recaptchalib.php';  
+
 
 //Make an additional check if client is allowed to post/submit
 //[Spam] protection
@@ -133,9 +136,7 @@ if (empty ($_REQUEST['submit']))
    if (count ($price) > 0)
       SmartyValidate :: register_validator('v_LINK_TYPE'  , 'LINK_TYPE'          , 'notEmpty'      , false, false, 'trim', 'submit_link');
 
-   if (VISUAL_CONFIRM == 1)
-      SmartyValidate :: register_validator('v_CAPTCHA'    , 'CAPTCHA'            , 'isCaptchaValid', false, false, 'trim', 'submit_link');
-
+   
 }
 else
 {
@@ -167,15 +168,18 @@ else
    if (strlen (trim ($data['RECPR_URL'])) > 0 && !preg_match ('#^http[s]?:\/\/#i', $data['RECPR_URL']))
       $data['RECPR_URL'] = "http://".$data['RECPR_URL'];
 
-	if (VISUAL_CONFIRM == 1 && !empty ($_POST['CAPTCHA']))
-      $data = array_merge ($data, array ('CAPTCHA' => $_POST['CAPTCHA']));
+	/*if (VISUAL_CONFIRM == 1 && !empty ($_POST['CAPTCHA']))
+      $data = array_merge ($data, array ('CAPTCHA' => $_POST['CAPTCHA']));*/
 
-	if (SmartyValidate :: is_valid($data, 'submit_link'))
+	$rc_resp = validateReCaptcha();
+	if($rs_resp === true)
+		$tpl->assign('reCaptchaError', 1);
+	else
+		$tpl->assign('reCaptchaError', $rc_resp);
+	
+	if (SmartyValidate :: is_valid($data, 'submit_link') && ($rc_resp === true))
    {
-		if (VISUAL_CONFIRM)
-      {
-			unset ($data['CAPTCHA']);
-		}
+		
 
 		if (ENABLE_PAGERANK)
       {
@@ -228,6 +232,15 @@ else
 	}
 }
 unset ($_SESSION['CAPTCHA']);
+
+function validateReCaptcha()
+{
+$reCaptchaResp = recaptcha_check_answer(RECAPTCHA_PRIVATE_KEY  ,$_SERVER['REMOTE_ADDR'] ,$_POST['recaptcha_challenge_field'],$_POST['recaptcha_response_field']);
+if ($reCaptchaResp->is_valid)
+  return true;
+else
+  return $reCaptchaResp->error;
+}
 
 $path = array ();
 $path[] = array ('ID' => '0', 'TITLE' => _L(SITE_NAME), 'TITLE_URL' => DOC_ROOT, 'DESCRIPTION' => SITE_DESC);

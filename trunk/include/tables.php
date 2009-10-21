@@ -195,6 +195,9 @@ $tables = array();
       array ('ID' => 'PAGER_GROUPINGS'          , 'VALUE' => '20'                         ),
       # Links open in blank window
       array ('ID' => 'ENABLE_BLANK'             , 'VALUE' => '0'                          ),
+      # reCaptcha
+      array ('ID' => 'RECAPTCHA_PUBLIC_KEY' , VALUE => '6Lfi6ggAAAAAAFJ8xKWLVFxSjQS_zOcmYXZJfjAf'),
+      array( 'ID' => 'RECAPTCHA_PRIVATE_KEY', VALUE => '6Lfi6ggAAAAAAI8O6WVGzX25rRy71oYKlKeoIniT'),
    )
  );
 
