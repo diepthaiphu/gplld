@@ -1,10 +1,11 @@
 {strip}
-<a href="dir_categs_edit.php?action=N" class="btn"><img src="images/a_new.gif" width="16" height="13" border="0" alt="Edit" /> New Category</a> <a href="dir_categs_edit.php?action=N&s=1" class="btn"><img src="images/a_new.gif" width="16" height="13" border="0" alt="Edit" /> New Symbolic Category</a><br /><br />
+<a href="dir_categs_edit.php?action=N" class="button">New Category</a>
+<a href="dir_categs_edit.php?action=N&s=1" class="button">New Symbolic Category</a>
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
   {foreach from=$columns key=col item=name}
   {if $ENABLE_REWRITE or $col ne 'TITLE_URL'}
-  <td class="listHeader" id="{$col}"><img src="images/th_rb.gif" class="rb"/>
+  <th id="{$col}">
   {if $SORT_FIELD eq $col}
   	{if $SORT_ORDER eq 'ASC'}
   		<img src="images/sort_a.gif" width="16" height="9" class="order"/>
@@ -12,13 +13,12 @@
   		<img src="images/sort_d.gif" width="16" height="9" class="order"/>
   	{/if}
   {else}
-  	<img src="images/spacer.gif" width="16" height="9" class="order"/>
   {/if}
   {$name}
-  </td>
+  </th>
   {/if}
   {/foreach}
-  	<td class="listHeader" colspan="2">{l}Action{/l}</td>
+  	<th colspan="2">{l}Action{/l}</th>
   </tr>
  {foreach from=$list item=row key=id}
   <tr class="{cycle values="odd,even"}">

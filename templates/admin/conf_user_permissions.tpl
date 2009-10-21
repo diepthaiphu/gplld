@@ -3,7 +3,7 @@
 
 {strip}
 {if $sql_error}
-   <div class="err">
+   <div class="warning">
       <img src="images/no_22.gif" alt="" />
       <p>{l}An error occured while saving.{/l}</p>
       <p>{l}The database server returned the following message:{/l}</p>

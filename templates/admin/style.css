@@ -1,0 +1,12 @@
+/* Style */
+@import "css/reset.css";
+@import "css/21px.css";
+@import "css/2c-l-fixed.css";
+@import "css/drop-downs.css";
+@import "css/screen.css";
+
+th{font-weight:normal;}
+.news .date{ margin-right:10px;}
+/* #TODO */
+.tt{display:none;}
+#content{margin-top:10px;}

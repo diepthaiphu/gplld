@@ -24,10 +24,10 @@
             <tr>
                <td colspan="2">
                   {if $failed}
-                     <span class="err" style="margin:5px;">{l}Invalid username or password.{/l}</span>
+                     <span class="warning" style="margin:5px;">{l}Invalid username or password.{/l}</span>
                   {/if}
                   {if $no_permission}
-                     <span class="err" style="margin:5px;">{l}No permissions set for this user.{/l}</span>
+                     <span class="warning" style="margin:5px;">{l}No permissions set for this user.{/l}</span>
                   {/if}&nbsp;
                </td>
             </tr>

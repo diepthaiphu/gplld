@@ -239,6 +239,10 @@ $tpl->assign('categs', $categs);
 $tpl->assign($data);
 $tpl->assign('LINK_TYPE', $link_type);
 
+/* Top level Categories */
+$topcats = $db->GetAll("SELECT * FROM `{$tables['category']['name']}` WHERE `STATUS` = 2 AND `PARENT_ID` = 0 ORDER BY `TITLE`");
+$tpl->assign('topcats', $topcats);
+
 //Clean whitespace
 $tpl->load_filter('output', 'trimwhitespace');
 

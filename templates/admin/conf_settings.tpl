@@ -18,10 +18,10 @@
 {foreach from=$conf item=row}
    {if $categ ne $row.CONFIG_GROUP}
       {assign var="categ" value=$row.CONFIG_GROUP}
-      <tr><td colspan="2"><h2>{$conf_categs.$categ|trim}</h2></td></tr>
+      <tr><th colspan="2">{$conf_categs.$categ|trim}</th></tr>
    {/if}
    <tr>
-      <td  class="label">{if $row.REQUIRED eq 1}<span class='req'>*</span>{/if}{$row.NAME|escape}:</td>
+      <th>{if $row.REQUIRED eq 1}<span class='req'>*</span>{/if}{$row.NAME|escape}:</th>
       <td  class="smallDesc">
          {if $row.TYPE eq 'STR'}
             <input type="text" name="{$row.ID}" value="{$row.VALUE}" size="40" maxlength="255" class="text"/>
