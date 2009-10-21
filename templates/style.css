@@ -26,3 +26,4 @@ div#content div.content{width:640px;}
 .link .read-more{position:absolute;right:8px;bottom:8px;}
 
 #reCaptcha div {margin: 0 auto;}
+.error {display:block;}
