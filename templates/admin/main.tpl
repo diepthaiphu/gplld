@@ -1,13 +1,3 @@
-{php}
-$isExplorer = false;
-$isMozilla = false;
-$agent = strtolower($HTTP_USER_AGENT);
-if ((strpos ($agent, "ie")  !== false)) { $isExplorer = true; } else { $isMozilla = true; }
-if ((strpos ($agent, "jig") !== false)) { $isExplorer = false; $isMozilla = false; }
-
-$this->assign('isExplorer', $isExplorer);
-$this->assign('isMozilla', $isMozilla);
-{/php}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -50,7 +40,6 @@ $this->assign('isMozilla', $isMozilla);
 </div>
 <div id="container">
    <div id="content">
-      <img src="images/spacer.gif" height="32" width="1" alt="" style="float:left;"/>
       {$content}
    </div>
 </div>
