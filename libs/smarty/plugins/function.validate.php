@@ -35,8 +35,15 @@ function smarty_function_validate($params, &$smarty) {
     
     static $_halt = array();
     static $_is_init = null;
+    static $_form = 'default';
 
-    $_form = isset($params['form']) ? $params['form'] : 'default';
+    if(isset($params['form']))
+    {
+       if($params['form'] != $_form)
+          $_is_init = null;
+       $_form = $params['form'];
+    } 
+
     $_sess =& $_SESSION['SmartyValidate'][$_form];
 
     if(!isset($_is_init))
