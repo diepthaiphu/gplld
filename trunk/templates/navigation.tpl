@@ -17,7 +17,7 @@
 		{if $smarty.const.ENABLE_RSS and (!empty($qu) or !empty($category.ID) or $p)}
 		<div id="rss">
 			<a href="{$smarty.const.DOC_ROOT}/rss.php?{if !empty($qu)}q={$qu|@urlencode}{elseif $p}p={$p}{else}c={$category.ID}{/if}">
-				<img src="{$smarty.const.DOC_ROOT}/images/xml.gif" align="top" alt="RSS Feed" border="0" />
+				<img src="{$smarty.const.DOC_ROOT}/templates/images/feed.png" align="top" alt="RSS Feed" border="0" />
 			</a>
 		</div>
 		{/if}
