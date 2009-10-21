@@ -136,6 +136,7 @@ if ($_SESSION['is_admin']) {
 								array('label' => _L('Admin Area'), 'url' => 'conf_settings.php?c=6'),
 								array('label' => _L('Featured Links'), 'url' => 'conf_settings.php?c=7'),
 								array('label' => _L('Payment'), 'url' => 'conf_settings.php?c=9'),
+								array('label' => _L('reCaptcha'), 'url' => 'conf_settings.php?c=10'),
 								//array('label' => _L('Paypal Integration'), 'url' => 'conf_settings.php?c=8'),
 							)
 						),
@@ -180,6 +181,7 @@ $conf_categs = array(
  		'7' => _L('Featured Links'),
  		//'8' => _L('Paypal Integration'),
  		'8' => _L('Payment'),
+		'10' => _L('reCaptcha'),
 );
 $tpl->assign('menu', $menu);
 
@@ -513,6 +515,20 @@ $conf = array(
 			  'NAME' => _L('PayPal account'),
 			  'DESCRIPTION' => _L('Your PayPal account.'),
 			  'CONFIG_GROUP' => '9',
+			  'TYPE' => 'STR',
+			  'REQUIRED' => '1'),
+			  
+		#reCaptcha
+		array('ID' => 'RECAPTCHA_PUBLIC_KEY',
+			  'NAME' => _L('reCaptcha Public Key'),
+			  'DESCRIPTION' => _L('Enter your reCaptcha Public Key'),
+			  'CONFIG_GROUP' => '10',
+			  'TYPE' => 'STR',
+			  'REQUIRED' => '1'),
+ 		array('ID' => 'RECAPTCHA_PRIVATE_KEY',
+			  'NAME' => _L('reCaptcha Private Key'),
+			  'DESCRIPTION' => _L('Enter your reCaptcha Private Key'),
+			  'CONFIG_GROUP' => '10',
 			  'TYPE' => 'STR',
 			  'REQUIRED' => '1'),
  	);
