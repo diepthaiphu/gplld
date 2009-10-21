@@ -1,22 +1,20 @@
 {strip}
-<a href="email_message_edit.php?action=N" class="btn"><img src="images/a_new.gif" width="16" height="13" border="0" alt="New" /> New Email Template</a><br /><br />
+<a href="email_message_edit.php?action=N" class="button">New Email Template</a>
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
   {foreach from=$columns key=col item=name}
-  <td class="listHeader" id="{$col}"><img src="images/th_rb.gif" class="rb"/>
+  <th id="{$col}">
   {if $SORT_FIELD eq $col}
   	{if $SORT_ORDER eq 'ASC'}
   		<img src="images/sort_a.gif" width="16" height="9" class="order"/>
   	{else}
   		<img src="images/sort_d.gif" width="16" height="9" class="order"/>
   	{/if}
-  {else}
-  	<img src="images/spacer.gif" width="16" height="9" class="order"/>
   {/if}
   {$name}
-  </td>
+  </th>
   {/foreach}
-  	<td class="listHeader" colspan="2">{l}Action{/l}</td>
+  	<th colspan="2">{l}Action{/l}</th>
   </tr>
  {foreach from=$list item=row key=id}
   <tr class="{cycle values="odd,even"}">

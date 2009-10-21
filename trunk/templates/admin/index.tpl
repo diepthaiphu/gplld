@@ -2,16 +2,16 @@
    {include file="admin/messages.tpl"}
 
 {strip}
-<div class="{if $update_available ne 1}version{else}err{/if}">{$version|escape|trim}</div>
+<div class="{if $update_available ne 1}download{else}warning{/if}">{$version|escape|trim}</div>
 
 {foreach from=$security_warnings item=warning}
-   <div class="err">{$warning|trim}</div>
+   <div class="warning">{$warning|trim}</div>
 {/foreach}
 
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
-     <td class="listHeader"><img src="images/th_rb.gif" class="rb" alt="" />{l}Statistic{/l}</td>
-     <td class="listHeader" colspan="2">{l}Value{/l}</td>
+     <th>{l}Statistic{/l}</th>
+     <th>{l}Value{/l}</th>
   </tr>
   <tr class="odd">
      <td>{l}Active Links{/l}</td>
@@ -42,7 +42,7 @@
 {foreach from=$news item=item}
 <table border="0" cellpadding="0" cellspacing="0" class="news">
    <tr>
-      <td class="title"><span class="date">{$item.date}</span>{$item.title|escape|trim}</td>
+      <th><span class="date">{$item.date}</span>{$item.title|escape|trim}</th>
    </tr>
    <tr>
       <td class="body">{$item.body|trim}</td>

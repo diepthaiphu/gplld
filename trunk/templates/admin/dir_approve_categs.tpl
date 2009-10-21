@@ -2,20 +2,18 @@
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
   {foreach from=$columns key=col item=name}
-  <td class="listHeader" id="{$col}"><img src="images/th_rb.gif" class="rb"/>
+  <th id="{$col}">
   {if $SORT_FIELD eq $col}
   	{if $SORT_ORDER eq 'ASC'}
   		<img src="images/sort_a.gif" width="16" height="9" class="order"/>
   	{else}
   		<img src="images/sort_d.gif" width="16" height="9" class="order"/>
   	{/if}
-  {else}
-  	<img src="images/spacer.gif" width="16" height="9" class="order"/>
   {/if}
   {$name}
-  </td>
+  </th>
   {/foreach}
-  	<td class="listHeader" colspan="3">{l}Action{/l}</td>
+  	<th colspan="3">{l}Action{/l}</th>
   </tr>
  {foreach from=$list item=row key=id}
   <tr class="{cycle values="odd,even"}">

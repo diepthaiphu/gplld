@@ -3,7 +3,7 @@
 
 {strip}
 {if $sql_error}
-   <div class="err">
+   <div class="warning">
       <img src="images/no_22.gif" alt="" />
       <p>{l}An error occured while saving.{/l}</p>
       <p>{l}The database server returned the following message:{/l}</p>
@@ -18,7 +18,7 @@
 {/if}
 
 {if isset($AllowedFeat) and $AllowedFeat ne 1}
-   <div class="err">
+   <div class="warning">
       <img src="images/no_22.gif" alt="" />
       <p>{l}Maximum number of featured links for this category exceeded!{/l}</p>
       <p>{l}Please review link preferences.{/l}</p>
@@ -31,7 +31,7 @@
   <tr><td colspan="2"><h2>{l}Create new link{/l}</h2></td></tr>
 {/if}
   <tr>
-   <td class="label"><span class='req'>*</span>{l}Title{/l}:</td>
+   <th><span class='req'>*</span>{l}Title{/l}:</th>
    <td class="smallDesc">
       <input type="text" name="TITLE" value="{$TITLE|escape|trim}" size="30" maxlength="255" class="text" />
       {validate form="dir_links_edit" id="v_TITLE" message=$smarty.capture.field_char_required}
@@ -39,7 +39,7 @@
    </td>
   </tr>
   <tr>
-   <td class="label"><span class='req'>*</span>{l}URL{/l}:</td>
+   <th><span class='req'>*</span>{l}URL{/l}:</th>
    <td class="smallDesc">
       <input type="text" name="URL" value="{$URL|escape|trim}" size="40" maxlength="255" class="text"/>
       {validate form="dir_links_edit" id="v_URL" message=$smarty.capture.invalid_url}
@@ -47,26 +47,26 @@
    </td>
   </tr>
   <tr>
-   <td class="label">{l}Description{/l}:</td>
+   <th>{l}Description{/l}:</th>
    <td class="smallDesc">
       <textarea name="DESCRIPTION" rows="6" cols="50" class="text" wrap="yes">{$DESCRIPTION|trim|escape}</textarea>
    </td>
   </tr>
    <tr>
-      <td class="label">{l}Owner Name{/l}:</td>
+      <th>{l}Owner Name{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="OWNER_NAME" value="{$OWNER_NAME|escape|trim}" size="30" maxlength="255" class="text" />
       </td>
    </tr>
    <tr>
-      <td class="label">{l}Owner Email{/l}:</td>
+      <th>{l}Owner Email{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="OWNER_EMAIL" value="{$OWNER_EMAIL|escape|trim}" size="30" maxlength="255" class="text" />
          {validate form="dir_links_edit" id="v_OWNER_EMAIL" message=$smarty.capture.invalid_email}
       </td>
    </tr>
   <tr>
-   <td class="label"><span class='req'>*</span>{l}Category{/l}:</td>
+   <th><span class='req'>*</span>{l}Category{/l}:</th>
    <td class="smallDesc">
       {html_options options=$categs selected=$CATEGORY_ID name="CATEGORY_ID"}
       {validate form="dir_links_edit" id="v_CATEGORY_ID" message=$smarty.capture.no_url_in_top}
@@ -74,26 +74,26 @@
   </tr>
    {if $smarty.const.FTR_ENABLE}
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Featured{/l}:</td>
+      <th><span class='req'>*</span>{l}Featured{/l}:</th>
       <td class="smallDesc">
          <input type="checkbox" name="FEATURED" value="1" {if $FEATURED}checked="checked"{/if} />
       </td>
    </tr>
    {/if}
   <tr>
-   <td class="label"><span class='req'>*</span>{l}NoFollow{/l}:</td>
+   <th><span class='req'>*</span>{l}NoFollow{/l}:</th>
    <td class="smallDesc">
    <input type="checkbox" name="NOFOLLOW" value="1" {if $NOFOLLOW}checked="checked"{/if} />
    </td>
   </tr>
   <tr>
-   <td class="label"><span class='req'>*</span>{l}Require Reciprocal Link{/l}:</td>
+   <th><span class='req'>*</span>{l}Require Reciprocal Link{/l}:</th>
    <td class="smallDesc">
       <input type="checkbox" name="RECPR_REQUIRED" value="1" {if $RECPR_REQUIRED}checked="checked"{/if} />
    </td>
   </tr>
   <tr>
-   <td class="label">{l}Reciprocal Link URL{/l}:</td>
+   <th>{l}Reciprocal Link URL{/l}:</th>
    <td class="smallDesc">
       <input type="text" name="RECPR_URL" value="{$RECPR_URL|escape|trim}" size="40" class="text" />
       {validate form="dir_links_edit" id="v_RECPR_URL" message=$smarty.capture.invalid_url}
@@ -103,13 +103,13 @@
    </td>
   </tr>
   <tr>
-   <td class="label"><span class='req'>*</span>{l}Status{/l}:</td>
+   <th><span class='req'>*</span>{l}Status{/l}:</th>
    <td class="smallDesc">
       {html_options options=$stats selected=$STATUS name="STATUS"}
    </td>
   </tr>
   <tr>
-   <td class="label">{l}Link Expires{/l}:</td>
+   <th>{l}Link Expires{/l}:</th>
    <td class="smallDesc">
       <input type="text" name="EXPIRY_DATE" value="{$EXPIRY_DATE}" size="20" maxlength="40" class="text"/>
       {validate form="dir_links_edit" id="v_EXPIRY_DATE" message=$smarty.capture.invalid_date}

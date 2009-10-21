@@ -4,19 +4,30 @@
    {* Document/Browser title *}
    <title>{$smarty.const.DIRECTORY_TITLE}{$smarty.capture.title|strip}</title>
 
-   {* Document character set *}
+   {* Meta Tags *}
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
+   <meta name="description" content="{$metaDescription}" />
+   <meta name="keywords" content="{$metaKeywords}" />
+   <meta name="copyright" content="{$metaCopyright}" />
+   <meta name="robots" content="INDEX,FOLLOW" />
+   <meta name="generator" content="gplLD {$smarty.const.VERSION}" />
+   
    {* CSS Style file *}
-   <link rel="stylesheet" type="text/css" href="{$smarty.const.DOC_ROOT}/main.css" />
-
-   {* Please keep this line for better version tracking *}
-   <meta name="generator" content="PHP Link Directory {$smarty.const.CURRENT_VERSION}" />
+   <link rel="stylesheet" type="text/css" href="{$smarty.const.DOC_ROOT}/templates/style.css" />
+   
 </head>
 <body>
+<div id="body-container">
+	<div id="header-container">
+		<div id="header">
+			{* Error and confirmation messages *}
+			{include file="admin/messages.tpl"}
 
-{* Error and confirmation messages *}
-{include file="admin/messages.tpl"}
-
-<h1 id="title">{$in_page_title|escape|trim}</h1>
-<p id="descr">{$description|escape|trim}&nbsp;</p>
+			<h1 id="site-title">
+				{$in_page_title|escape|trim}
+			</h1>
+			<h2 id="site-description">
+				{$description|escape|trim}
+			</h2>
+		</div> <!-- #header -->
+	</div> <!-- #header-container -->

@@ -1,7 +1,7 @@
 {strip}
 {include file="admin/messages.tpl"}
 {if $sql_error}
-<div class="err">
+<div class="warning">
 <image src="images/no_22.gif"/>
 <p>{l}An error occured while saving.{/l}</p>
 <p>{l}The database server returned the following message:{/l}</p>
@@ -20,7 +20,7 @@
   <tr><td colspan="2"><h2>Create new {if $symbolic eq 1}symbolic{/if} category</h2></td></tr>
 {/if}
   <tr>
-  	<td class="label">{if $symbolic ne 1}<span class='req'>*</span>{/if}{l}Title{/l}:</td>
+  	<th>{if $symbolic ne 1}<span class='req'>*</span>{/if}{l}Title{/l}:</th>
   	<td class="smallDesc">
   		<input type="text" name="TITLE" value="{$TITLE}" size="20" maxlength="100" class="text"/>{if $symbolic ne 1}{validate form="dir_categs_edit" id="v_TITLE" message=$smarty.capture.field_char_required}
   		{validate form="dir_categs_edit" id="v_TITLE_U" message=$smarty.capture.title_not_unique}{/if}
@@ -28,7 +28,7 @@
   </tr>
 {if $symbolic eq 1}
   <tr>
-  	<td class="label">&nbsp</td>
+  	<th>&nbsp</th>
   	<td class="smallDesc">
 		<p class="small">{l}Leave blank to follow the title of the category<br />that you're creating a symbolic link for{/l}</p>
   	</td>
@@ -36,7 +36,7 @@
 {/if}
 {if $ENABLE_REWRITE and $symbolic ne 1}
   <tr>
-    <td class="label"><span class='req'>*</span>{l}URL Title{/l}:</td>
+    <th><span class='req'>*</span>{l}URL Title{/l}:</th>
     <td class="smallDesc">
 		<input type="text" name="TITLE_URL" value="{$TITLE_URL}" size="20" maxlength="100" class="text"/>{validate form="dir_categs_edit" id="v_TITLE_URL"  message=$smarty.capture.invalid_url_path}
 		{validate form="dir_categs_edit" id="v_TITLE_URL_U" message=$smarty.capture.url_title_not_unique}
@@ -45,28 +45,28 @@
 {/if}
 {if $symbolic ne 1}
   <tr>
-  	<td class="label">{l}Description{/l}:</td>
+  	<th>{l}Description{/l}:</th>
   	<td class="smallDesc">
   		<textarea name="DESCRIPTION" rows="3" cols="30" class="text">{$DESCRIPTION}</textarea>
   	</td>
   </tr>
 {/if}
   <tr>
-  	<td class="label"><span class='req'>*</span>{l}Parent{/l}:</td>
+  	<th><span class='req'>*</span>{l}Parent{/l}:</th>
   	<td class="smallDesc">
   		{html_options options=$categs selected=$PARENT_ID name="PARENT_ID"}
   	</td>
   </tr>
 {if $symbolic eq 1}
   <tr>
-  	<td class="label"><span class='req'>*</span>{l}Symbolic category for{/l}:</td>
+  	<th><span class='req'>*</span>{l}Symbolic category for{/l}:</th>
   	<td class="smallDesc">
   		{html_options options=$categs selected=$SYMBOLIC_ID name="SYMBOLIC_ID"}{validate form="dir_categs_edit" id="v_SYMBOLIC_ID" message=$smarty.capture.no_url_in_top}{validate form="dir_categs_edit" id="v_SYMBOLIC_ID_E" message=$smarty.capture.invalid_symbolic_category}{validate form="dir_categs_edit" id="v_SYMBOLIC_ID_U" message=$smarty.capture.symbolic_category_exist}{validate form="dir_categs_edit" id="v_SYMBOLIC_ID_P" message=$smarty.capture.invalid_symbolic_parent}
   	</td>
   </tr>
 {/if}
   <tr>
-  	<td class="label"><span class='req'>*</span>{l}Status{/l}:</td>
+  	<th><span class='req'>*</span>{l}Status{/l}:</th>
   	<td class="smallDesc">
   		{html_options options=$stats selected=$STATUS name="STATUS"}
   	</td>
@@ -87,7 +87,7 @@ var id = {$id};
 <table border="0" class="formPage">
   <tr><td colspan="2">{l}The category contains {$count_categs} subcategorie(s) and {$count_links} link(s).<br /> Cannot proceed with delete until further action is taken:{/l}</td></tr>
   <tr>
-  	<td class="label">{l}Move all to{/l} <input type="radio" name="DO" value="M" {if $DO eq "M"}checked="1"{/if} onclick="warn=false;return true;" /></td>
+  	<th>{l}Move all to{/l} <input type="radio" name="DO" value="M" {if $DO eq "M"}checked="1"{/if} onclick="warn=false;return true;" /></th>
   	<td class="smallDesc">
   		{html_options options=$categs selected=$CATEGORY_ID name="CATEGORY_ID"}
   		{if $error}
@@ -96,7 +96,7 @@ var id = {$id};
   	</td>
   </tr>
   <tr>
-  	<td class="label">{l}Delete all{/l} <input type="radio" name="DO" value="D" {if $DO eq "D"}checked="1"{/if} onclick="warn=true;return true;" /></td>
+  	<th>{l}Delete all{/l} <input type="radio" name="DO" value="D" {if $DO eq "D"}checked="1"{/if} onclick="warn=true;return true;" /></th>
   	<td class="smallDesc">
   		&nbsp;
   	</td>

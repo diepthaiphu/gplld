@@ -1,27 +1,23 @@
 {strip}
-<a href="dir_links_edit.php?action=N{if $featured}&f=1{/if}" class="btn"><img src="images/a_new.gif" width="16" height="13" border="0" alt="{l}New{/l}" /> {l}New Link{/l}</a>
+<a href="dir_links_edit.php?action=N{if $featured}&f=1{/if}" class="button">{l}New Link{/l}</a>
 {if $rss_link eq true}
-&nbsp;&nbsp;<a href="dir_links_importrss.php?c={$category}" class="btn"><img src="images/a_new.gif" width="16" height="13" border="0" alt="{l}Import RSS{/l}" /> {l}Import RSS{/l}</a>
+&nbsp;&nbsp;<a href="dir_links_importrss.php?c={$category}" class="button">{l}Import RSS{/l}</a>
 {/if}
-<br /><br />
-
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
   {foreach from=$columns key=col item=name}
-  <td class="listHeader" id="{$col}"><img src="images/th_rb.gif" class="rb"/>
+  <th id="{$col}">
   {if $SORT_FIELD eq $col}
   	{if $SORT_ORDER eq 'ASC'}
   		<img src="images/sort_a.gif" width="16" height="9" class="order"/>
   	{else}
   		<img src="images/sort_d.gif" width="16" height="9" class="order"/>
   	{/if}
-  {else}
-  	<img src="images/spacer.gif" width="16" height="9" class="order"/>
   {/if}
   {$name}
-  </td>
+  </th>
   {/foreach}
-  	<td class="listHeader" colspan="2">{l}Action{/l}</td>
+  	<th colspan="2">{l}Action{/l}</td>
   </tr>
  {foreach from=$list item=row key=id}
   <tr class="{if $category and $row.FEATURED}featured{else}{cycle values="odd,even"}{/if}">
@@ -31,7 +27,7 @@
   		<td>
   		<a href="javascript:void(0);" class="pop" id="S{$id}" ><img src="images/stat_{$val}.gif" width="9" height="9" border="0"/> {$stats[$val]}</a>
   		<div class="pop-list" id="pS{$id}">
-  			<h2>Set new status:</h2>
+  			<span>Set new status:</span>
   			{foreach from=$stats item=v key=k}
   			{if $k ne $val and $k ne 1}
   				<a href="dir_links_edit.php?action=S:{$id}:{$k}"><img src="images/stat_{$k}.gif" width="9" height="9" border="0"/> {$stats[$k]}</a><br />

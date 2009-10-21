@@ -9,31 +9,31 @@
 
 <table border="0" class="formPage" width="100%">
    <tr>
-      <td class="label">{l}Site Name{/l}</td>
+      <th>{l}Site Name{/l}</th>
       <td>{$sent.TITLE|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Site Owner Name{/l}</td>
+      <th>{l}Site Owner Name{/l}</th>
       <td>{$sent.NAME|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Link URL{/l}</td>
+      <th>{l}Link URL{/l}</th>
       <td>{$sent.URL|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Description{/l}</td>
+      <th>{l}Description{/l}</th>
       <td>{$sent.DESCRIPTION|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Email{/l}</td>
+      <th>{l}Email{/l}</th>
       <td>{$sent.EMAIL|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Category{/l}</td>
+      <th>{l}Category{/l}</th>
       <td>{$sent.CATEGORY|escape}</td>
    </tr>
    <tr>
-      <td class="label">{l}Message Template{/l}</td>
+      <th>{l}Message Template{/l}</th>
       <td>{$tpls.$EMAIL_TPL_ID|escape}</td>
    </tr>
 </table>
@@ -41,7 +41,7 @@
 
 <form method="post" action="">
 {if $send_error}
-   <div class="err">
+   <div class="warning">
    <img src="images/no_22.gif" alt="" />
    <p>{l}An error occured while sending email.{/l}</p>
    <p>{l}The message was not sent.{/l}</p>
@@ -49,7 +49,7 @@
 {/if}
 
 {if $sql_error}
-   <div class="err">
+   <div class="warning">
    <img src="images/no_22.gif" alt="" />
    <p>{l}An error occured while saving.{/l}</p>
    <p>{l}The database server returned the following message:{/l}</p>
@@ -63,47 +63,47 @@
    <tr><td colspan="2"><h2>Send new email</h2></td></tr>
    {/if}
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Site Name{/l}:</td>
+      <th><span class='req'>*</span>{l}Site Name{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="TITLE" value="{$TITLE}" size="40" maxlength="100" class="text"/>
          {validate id="v_TITLE" message=$smarty.capture.field_char_required}
       </td>
    </tr>
    <tr>
-      <td class="label">{l}Site Owner Name{/l}:</td>
+      <th>{l}Site Owner Name{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="NAME" value="{$NAME}" size="40" maxlength="100" class="text"/>
       </td>
    </tr>
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Link URL{/l}:</td>
+      <th><span class='req'>*</span>{l}Link URL{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="URL" value="{$URL}" size="40" maxlength="255" class="text"/>
          {validate id="v_URL" message=$smarty.capture.invalid_url}
       </td>
    </tr>
    <tr>
-      <td class="label">{l}Description{/l}:</td>
+      <th>{l}Description{/l}:</th>
       <td class="smallDesc">
          <textarea name="DESCRIPTION" rows="3" cols="30" class="text">{$DESCRIPTION}</textarea>
       </td>
    </tr>
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Email{/l}:</td>
+      <th><span class='req'>*</span>{l}Email{/l}:</th>
       <td class="smallDesc">
          <input type="text" name="EMAIL" value="{$EMAIL}" size="40" maxlength="255" class="text" />
          {validate id="v_EMAIL" message=$smarty.capture.invalid_email}
       </td>
    </tr>
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Category{/l}:</td>
+      <th><span class='req'>*</span>{l}Category{/l}:</th>
       <td class="smallDesc">
          {html_options options=$categs selected=$CATEGORY_ID name="CATEGORY_ID"}
          {validate id="v_CATEGORY_ID" message=$smarty.capture.no_url_in_top}
       </td>
    </tr>
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Message Template{/l}:</td>
+      <th><span class='req'>*</span>{l}Message Template{/l}:</th>
       <td class="smallDesc">
          {html_options options=$tpls selected=$EMAIL_TPL_ID name="EMAIL_TPL_ID"}
       </td>

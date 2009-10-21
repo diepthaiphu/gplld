@@ -3,10 +3,13 @@
 {capture assign="description"}{l}Submit a new link to the directory{/l}{/capture}
 
 {include file="header.tpl"}
-{include file="top_bar.tpl"}
+{include file="navigation.tpl"}
 
-{strip}
-
+<div id="container">
+	<div id="content"> <!-- for categories/links -->
+	<div class="content">
+		{include file="breadcrumb.tpl"}
+		
 <form method="post" action="">
 <table border="0" class="formPage">
 
@@ -109,13 +112,16 @@
 
    {if $smarty.const.VISUAL_CONFIRM}
    <tr>
-      <td class="label"><span class='req'>*</span>{l}Enter the code shown{/l}:</td>
-         <td class="field">
-            <input type="text" name="CAPTCHA" value="" size="10" maxlength="10" class="text" />
-            {validate form="submit_link" id="v_CAPTCHA" message=$smarty.capture.invalid_code}<br />
-            <p class="small">{l}This helps prevent automated registrations.{/l}</p>
-            <img src="{$smarty.const.DOC_ROOT}/captcha.php" class="captcha" alt="{l}Visual Confirmation Security Code{/l}" title="{l}Visual Confirmation Security Code{/l}" />
-         </td>
+      <td colspan=2>
+		<div id="reCaptcha">
+			<div>
+			{if isset($reCaptchaError) && $reCaptchaError ne 1}
+				<div class="error">{l}Invalid Input{/l}</div>
+			{/if}
+		   {recaptcha error=$reCaptchaError}
+		   </div>
+		</div>
+	  </td>
    </tr>
    {/if}
 
@@ -124,5 +130,11 @@
    </tr>
 </table>
 </form>
+</div> <!-- .content -->
+	
+{include file="sidebar.tpl"}
+	
+</div> <!-- #content -->
+</div> <!-- #container -->
 {include file="footer.tpl"}
-{/strip}
+

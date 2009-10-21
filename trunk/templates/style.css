@@ -1,0 +1,28 @@
+/* Style */
+@import "css/reset.css";
+@import "css/21px.css";
+@import "css/2c-l-fixed.css";
+@import "css/drop-downs.css";
+@import "css/screen.css";
+
+#categories h3, #categories h4{font-weight:normal;}
+.categories{width:50%;float:left;}
+.categories h3 a,.categories h3 a:visited,.categories h4 a,.categories h4 a:visited{color:#224;}
+.categories h4{margin-bottom:11px;}
+
+
+div#content div.content{width:640px;}
+#search{float:right;}
+
+#pagenavi{margin-bottom:20px;clear:both;}
+#pagenavi .page, #pagenavi .pages, #pagenavi a, #pagenavi .next, #pagenavi .previous{border:1px solid #CCCCCC;margin-right:6px;padding:3px 9px;}
+#pagenavi .current{font-weight:bold;}
+
+.link {margin-bottom:15px;margin-top:10px;border:thin dotted #ccc; padding:10px;position:relative;}
+.link .read-more{background:#eee;padding:5px}
+.link .read-more:hover{background:#d6d6d6;color:#21759B}
+.link .col1{width:50px;float:left;}
+.link .col2{margin-left:50px;}
+.link .read-more{position:absolute;right:8px;bottom:8px;}
+
+#reCaptcha div {margin: 0 auto;}

@@ -16,27 +16,25 @@
 </em>
 
 {if $error}
-   <div class="err">
-      <img src="images/no_22.gif" alt="" />
+   <div class="warning">
       <p>{l}An error occured while parsing the RSS feed. Please make sure that the specified URL is a valid RSS feed.{/l}</p>
       <p>{l}The RSS parser returned the following message:{/l}</p>
       <p>{$error|escape}</p>
    </div>
 {elseif $link_count eq 0}
-   <div class="err">
-      <img src="images/no_22.gif" alt="" />
+   <div class="warning">
       <p>{l}No links were found in the RSS feed.{/l}</p><br /><br />
    </div>
 {/if}
 <form name="form1" method="post" action="dir_links_importrss.php?c={$cid}">
 <table border="0" class="formPage">
     <tr>
-      <td class="label"><span class='req'>*</span>{l}RSS feed URL{/l}:</td>
+      <th><span class='req'>*</span>{l}RSS feed URL{/l}:</th>
       <td class="smallDesc"><input name="rss_url" type="text" class="text" value="{$rss_url}" id="rss_url" size="40">
       {validate id="v_URL" message=$smarty.capture.invalid_url}</td>
     </tr>
     <tr>
-      <td class="label"><span class='req'>*</span>{l}Import as{/l}:</td>
+      <th><span class='req'>*</span>{l}Import as{/l}:</th>
       <td class="smallDesc">
         <input name="status" type="radio" value="2" checked> {l}Active{/l} &nbsp;
       <input name="status" type="radio" value="0">{l}Inactive{/l}</td>
@@ -53,9 +51,9 @@
 {if $list}
 <table border="0" cellpadding="0" cellspacing="0" class="list">
    <tr>
-      <td class="listHeader"><img src="images/th_rb.gif" class="rb" alt="" />{l}Title{/l}</td>
-      <td class="listHeader"><img src="images/th_rb.gif" class="rb" alt="" />{l}URL{/l}</td>
-      <td class="listHeader">{l}Result{/l}</td>
+      <th>{l}Title{/l}</th>
+      <th>{l}URL{/l}</th>
+      <th>{l}Result{/l}</th>
    </tr>
    {foreach from=$list item=row key=id}
    <tr class="{cycle values="odd,even"}">

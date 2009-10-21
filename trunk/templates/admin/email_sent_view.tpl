@@ -2,13 +2,13 @@
 <form method="post" action="">
 <table border="0" class="formPage" width="100%">
   <tr>
-  	<td class="label">{l}Start Date{/l}</td>
+  	<th>{l}Start Date{/l}</th>
   	<td class="smallDesc">
   		{html_select_date prefix="SD" time=$SD start_year="-5" end_year="+1"}
   	</td>
   </tr>
   <tr>
-  	<td class="label">{l}End Date{/l}</td>
+  	<th>{l}End Date{/l}</th>
   	<td class="smallDesc">
   		{html_select_date prefix="ED" time=$ED start_year="-5" end_year="+1"}
   	</td>
@@ -22,19 +22,16 @@
 <table border="0" cellpadding="0" cellspacing="0" class="list">
   <tr>
   {foreach from=$columns key=col item=name name=cols}
-  <td class="listHeader" id="{$col}">
-  {if not $smarty.foreach.cols.last}<img src="images/th_rb.gif" class="rb"/>{/if}
+  <th id="{$col}">
   {if $SORT_FIELD eq $col}
   	{if $SORT_ORDER eq 'ASC'}
   		<img src="images/sort_a.gif" width="16" height="9" class="order"/>
   	{else}
   		<img src="images/sort_d.gif" width="16" height="9" class="order"/>
   	{/if}
-  {else}
-  	<img src="images/spacer.gif" width="16" height="9" class="order"/>
   {/if}
   {$name}
-  </td>
+  </th>
   {/foreach}
   </tr>
  {foreach from=$list item=row key=id}
