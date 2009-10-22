@@ -123,7 +123,7 @@ if ($_SESSION['is_admin']) {
 						)
 					),
 		'conf' => array(
-					'label' => _L('System'),
+					'label' => _L('Settings'),
 					'menu'  => array(
 						array('label' => _L('Site'), 'url' => 'conf_settings.php?c=1'),
 						array('label' => _L('Directory'), 'url' => 'conf_settings.php?c=2'),
