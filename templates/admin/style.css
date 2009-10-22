@@ -10,3 +10,5 @@ th{font-weight:normal;}
 /* #TODO */
 .tt{display:none;}
 #content{margin-top:10px;}
+
+div#container{min-height:600px;height:auto !important;height:600px;}
