@@ -125,21 +125,16 @@ if ($_SESSION['is_admin']) {
 		'conf' => array(
 					'label' => _L('System'),
 					'menu'  => array(
-						'settings' => array(
-							'label' => _L('Edit Settings'),
-							'menu' => array(
-								array('label' => _L('Site'), 'url' => 'conf_settings.php?c=1'),
-								array('label' => _L('Directory'), 'url' => 'conf_settings.php?c=2'),
-								array('label' => _L('Link Submit'), 'url' => 'conf_settings.php?c=3'),
-								array('label' => _L('Emailer'), 'url' => 'conf_settings.php?c=4'),
-								array('label' => _L('Notifications'), 'url' => 'conf_settings.php?c=5'),
-								array('label' => _L('Admin Area'), 'url' => 'conf_settings.php?c=6'),
-								array('label' => _L('Featured Links'), 'url' => 'conf_settings.php?c=7'),
-								array('label' => _L('Payment'), 'url' => 'conf_settings.php?c=9'),
-								array('label' => _L('reCaptcha'), 'url' => 'conf_settings.php?c=10'),
-								//array('label' => _L('Paypal Integration'), 'url' => 'conf_settings.php?c=8'),
-							)
-						),
+						array('label' => _L('Site'), 'url' => 'conf_settings.php?c=1'),
+						array('label' => _L('Directory'), 'url' => 'conf_settings.php?c=2'),
+						array('label' => _L('Link Submit'), 'url' => 'conf_settings.php?c=3'),
+						array('label' => _L('Emailer'), 'url' => 'conf_settings.php?c=4'),
+						array('label' => _L('Notifications'), 'url' => 'conf_settings.php?c=5'),
+						array('label' => _L('Admin Area'), 'url' => 'conf_settings.php?c=6'),
+						array('label' => _L('Featured Links'), 'url' => 'conf_settings.php?c=7'),
+						array('label' => _L('Payment'), 'url' => 'conf_settings.php?c=9'),
+						array('label' => _L('reCaptcha'), 'url' => 'conf_settings.php?c=10'),
+						//array('label' => _L('Paypal Integration'), 'url' => 'conf_settings.php?c=8'),
 						'message' => array('label' => _L('Edit Email Templates'), 'url' => 'email_message.php'),
 						'payment' => array('label' => _L('Payments'), 'url' => 'conf_payment.php', 'disabled' => PAY_ENABLE!=='1'),
 						'profile' => _L('Profile'),
