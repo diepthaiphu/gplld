@@ -63,7 +63,7 @@
       <th>{l}URL - Link{/l} 1 : </th>
       <td class="field">
          <input type="text" name="URL1" value="{$URL1|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
+         {validate form="dir_links_edit" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
@@ -83,7 +83,7 @@
       <th>{l}URL - Link{/l} 2 : </th>
       <td class="field">
          <input type="text" name="URL2" value="{$URL2|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
+         {validate form="dir_links_edit" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
@@ -103,7 +103,7 @@
       <th>{l}URL - Link{/l} 3 : </th>
       <td class="field">
          <input type="text" name="URL3" value="{$URL3|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
+         {validate form="dir_links_edit" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
@@ -123,7 +123,7 @@
       <th>{l}URL - Link{/l} 4 : </th>
       <td class="field">
          <input type="text" name="URL4" value="{$URL4|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
+         {validate form="dir_links_edit" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
@@ -143,7 +143,7 @@
       <th>{l}URL - Link{/l} 5 : </th>
       <td class="field">
          <input type="text" name="URL5" value="{$URL5|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
+         {validate form="dir_links_edit" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
