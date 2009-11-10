@@ -4,8 +4,11 @@
    <title>gplLD v{$smarty.const.CURRENT_VERSION} Admin{if !empty($title)} - {$title|escape|trim}{/if}</title>
    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
      
-	{* CSS Style file *}
+   {* CSS Style file *}
    <link rel="stylesheet" type="text/css" href="{$smarty.const.DOC_ROOT}/../templates/admin/style.css" />
+   {* jQuery & JS File *}
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+   <script src="{$smarty.const.DOC_ROOT}/../templates/admin/js/script.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="body-container">
