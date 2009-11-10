@@ -136,7 +136,8 @@ if (empty ($_REQUEST['submit']))
    if (count ($price) > 0)
       SmartyValidate :: register_validator('v_LINK_TYPE'  , 'LINK_TYPE'          , 'notEmpty'      , false, false, 'trim', 'submit_link');
    // Deeplink URL Validation
-   SmartyValidate :: register_validator('v_DEEPLINK_URL'           , 'URL1:URL2:URL3:URL4:URL5', 'isURL'       , true, false, 'trim', 'submit_link');
+   for($dl=1; $dl<=5; $dl++)
+   SmartyValidate :: register_validator('v_DEEPLINK_URL' . $dl, 'URL' . $dl, 'isURL' , true, false, 'trim', 'submit_link');
    
    
 }
