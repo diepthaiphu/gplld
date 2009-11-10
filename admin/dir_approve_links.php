@@ -36,7 +36,29 @@ require_once 'init.php';
 $tpl->assign('ENABLE_REWRITE', ENABLE_REWRITE);
 
 $tpl->assign('stats', array (0 => _L('Inactive'), 1 => _L('Pending'), 2 => _L('Active'),));
-$tpl->assign('columns', array ('TITLE' => _L('Title'), 'URL' => _L('URL'), 'DESCRIPTION' => _L('Description'), 'CATEGORY' => _L('Category'), 'RECPR_URL' => _L('Recpr. Link URL'), 'DATE_ADDED' => _L('Date Added')));
+$tpl->assign('columns', array ('TITLE' => _L('Title'),
+								'URL' => _L('URL'),
+								'DESCRIPTION' => _L('Description'),
+								'CATEGORY' => _L('Category'),
+								'RECPR_URL' => _L('Recpr. Link URL'),
+								'DATE_ADDED' => _L('Date Added'),
+								'TITLE1' => _L('Title 1'),
+								'TITLE2' => _L('Title 2'),
+								'TITLE3' => _L('Title 3'),
+								'TITLE4' => _L('Title 4'),
+								'TITLE5' => _L('Title 5'),
+								'URL1' => _L('URL 1'),
+								'URL2' => _L('URL 2'),
+								'URL3' => _L('URL 3'),
+								'URL4' => _L('URL 4'),
+								'URL5' => _L('URL 5'),
+								'DESCRIPTION1' => _L('Description 1'),
+								'DESCRIPTION2' => _L('Description 2'),
+								'DESCRIPTION3' => _L('Description 3'),
+								'DESCRIPTION4' => _L('Description 4'),
+								'DESCRIPTION5' => _L('Description 5'),
+								
+));
 
 if (defined('SORT_FIELD') && SORT_FIELD != '')
 {
