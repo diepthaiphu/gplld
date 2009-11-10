@@ -52,6 +52,107 @@
       <textarea name="DESCRIPTION" rows="6" cols="50" class="text" wrap="yes">{$DESCRIPTION|trim|escape}</textarea>
    </td>
   </tr>
+  {* For Deeplinks *}
+   <tr>
+      <th>{l}Title - Link{/l} 1 : </th>
+      <td class="smallDesc">
+         <input type="text" name="TITLE1" value="{$TITLE1|escape|trim}" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <th>{l}URL - Link{/l} 1 : </th>
+      <td class="field">
+         <input type="text" name="URL1" value="{$URL1|escape|trim}" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <th>{l}Description - Link{/l} 1 : </th>
+      <td class="field">
+         <textarea name="DESCRIPTION1" rows="3" cols="37" class="text">{$DESCRIPTION1|escape|trim}</textarea>
+      </td>
+   </tr>
+   
+   <tr>
+      <th>{l}Title - Link{/l} 2 : </th>
+      <td class="smallDesc">
+         <input type="text" name="TITLE2" value="{$TITLE2|escape|trim}" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <th>{l}URL - Link{/l} 2 : </th>
+      <td class="field">
+         <input type="text" name="URL2" value="{$URL2|escape|trim}" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <th>{l}Description - Link{/l} 2 : </th>
+      <td class="field">
+         <textarea name="DESCRIPTION2" rows="3" cols="37" class="text">{$DESCRIPTION2|escape|trim}</textarea>
+      </td>
+   </tr>
+   
+      <tr>
+      <th>{l}Title - Link{/l} 3 : </th>
+      <td class="smallDesc">
+         <input type="text" name="TITLE3" value="{$TITLE3|escape|trim}" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <th>{l}URL - Link{/l} 3 : </th>
+      <td class="field">
+         <input type="text" name="URL3" value="{$URL3|escape|trim}" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <th>{l}Description - Link{/l} 3 : </th>
+      <td class="field">
+         <textarea name="DESCRIPTION3" rows="3" cols="37" class="text">{$DESCRIPTION3|escape|trim}</textarea>
+      </td>
+   </tr>
+   
+   <tr>
+      <th>{l}Title - Link{/l} 4 : </th>
+      <td class="smallDesc">
+         <input type="text" name="TITLE4" value="{$TITLE4|escape|trim}" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <th>{l}URL - Link{/l} 4 : </th>
+      <td class="field">
+         <input type="text" name="URL4" value="{$URL4|escape|trim}" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <th>{l}Description - Link{/l} 4 : </th>
+      <td class="field">
+         <textarea name="DESCRIPTION4" rows="3" cols="37" class="text">{$DESCRIPTION4|escape|trim}</textarea>
+      </td>
+   </tr>
+   
+      <tr>
+      <th>{l}Title - Link{/l} 5 : </th>
+      <td class="smallDesc">
+         <input type="text" name="TITLE5" value="{$TITLE5|escape|trim}" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <th>{l}URL - Link{/l} 5 : </th>
+      <td class="field">
+         <input type="text" name="URL5" value="{$URL5|escape|trim}" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <th>{l}Description - Link{/l} 5 : </th>
+      <td class="field">
+         <textarea name="DESCRIPTION5" rows="3" cols="37" class="text">{$DESCRIPTION5|escape|trim}</textarea>
+      </td>
+   </tr>
+   
    <tr>
       <th>{l}Owner Name{/l}:</th>
       <td class="smallDesc">
