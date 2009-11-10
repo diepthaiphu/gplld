@@ -78,7 +78,23 @@ $tables = array();
       'NOFOLLOW'           => 'L NOTNULL DEFAULT 0' ,
       'PAYED'              => 'I NOTNULL DEFAULT -1',
       'LINK_TYPE'          => 'I NOTNULL DEFAULT 0' ,
-      'IPADDRESS'          => 'C(15) NULL'
+      'IPADDRESS'          => 'C(15) NULL',
+	  // Deeplinks
+	  'TITLE1' => 'C(255) NULL' ,
+      'URL1' => 'C(255) NULL' ,
+      'TITLE2' => 'C(255) NULL' ,
+      'URL2' => 'C(255) NULL' ,
+      'TITLE3' => 'C(255) NULL' ,
+      'URL3' => 'C(255) NULL' ,
+	  'TITLE4' => 'C(255) NULL' ,
+      'URL4' => 'C(255) NULL' ,
+	  'TITLE5' => 'C(255) NULL' ,
+      'URL5' => 'C(255) NULL' ,
+      'DESCRIPTION1'        => 'X2 NULL'  ,
+      'DESCRIPTION2'        => 'X2 NULL'  ,
+      'DESCRIPTION3'        => 'X2 NULL'  ,
+      'DESCRIPTION4'        => 'X2 NULL'  ,
+	  'DESCRIPTION5'        => 'X2 NULL'
    ),
    'indexes' => array (
       'TITLE'              => 'TITLE'                               ,
