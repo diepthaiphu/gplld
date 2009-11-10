@@ -77,28 +77,106 @@
       </td>
    </tr>
    {* For Deeplinks *}
-   {section name=deeplink start=1 loop=6 step=1}
    <tr>
-      <td class="label">{l}Title - Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="label">{l}Title - Link{/l} 1 : </td>
       <td class="field">
-         <input type="text" name="TITLE{$smarty.section.deeplink.index}" value="" size="40" maxlength="255" class="text" />
+         <input type="text" name="TITLE1" value="" size="40" maxlength="255" class="text" />
       </td>
    </tr>
    <tr>
-      <td class="label">{l}URL - Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="label">{l}URL - Link{/l} 1 : </td>
       <td class="field">
-         <input type="text" name="URL{$smarty.section.deeplink.index}" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL" message=$smarty.capture.invalid_url}
+         <input type="text" name="URL1" value="" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
       </td>
    </tr>
     <tr>
-      <td class="label">{l}Description - Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="label">{l}Description - Link{/l} 1 : </td>
       <td class="field">
-         <textarea name="DESCRIPTION{$smarty.section.deeplink.index}" rows="3" cols="37" class="text"></textarea>
+         <textarea name="DESCRIPTION1" rows="3" cols="37" class="text"></textarea>
       </td>
    </tr>
- 
-   {/section}
+   
+   <tr>
+      <td class="label">{l}Title - Link{/l} 2 : </td>
+      <td class="field">
+         <input type="text" name="TITLE2" value="" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <td class="label">{l}URL - Link{/l} 2 : </td>
+      <td class="field">
+         <input type="text" name="URL2" value="" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <td class="label">{l}Description - Link{/l} 2 : </td>
+      <td class="field">
+         <textarea name="DESCRIPTION2" rows="3" cols="37" class="text"></textarea>
+      </td>
+   </tr>
+   
+   <tr>
+      <td class="label">{l}Title - Link{/l} 3 : </td>
+      <td class="field">
+         <input type="text" name="TITLE3" value="" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <td class="label">{l}URL - Link{/l} 3 : </td>
+      <td class="field">
+         <input type="text" name="URL3" value="" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <td class="label">{l}Description - Link{/l} 3 : </td>
+      <td class="field">
+         <textarea name="DESCRIPTION3" rows="3" cols="37" class="text"></textarea>
+      </td>
+   </tr>
+   
+   <tr>
+      <td class="label">{l}Title - Link{/l} 4 : </td>
+      <td class="field">
+         <input type="text" name="TITLE4" value="" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <td class="label">{l}URL - Link{/l} 4 : </td>
+      <td class="field">
+         <input type="text" name="URL4" value="" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <td class="label">{l}Description - Link{/l} 4 : </td>
+      <td class="field">
+         <textarea name="DESCRIPTION4" rows="3" cols="37" class="text"></textarea>
+      </td>
+   </tr>
+   
+   <tr>
+      <td class="label">{l}Title - Link{/l} 5 : </td>
+      <td class="field">
+         <input type="text" name="TITLE5" value="" size="40" maxlength="255" class="text" />
+      </td>
+   </tr>
+   <tr>
+      <td class="label">{l}URL - Link{/l} 5 : </td>
+      <td class="field">
+         <input type="text" name="URL5" value="" size="40" maxlength="255" class="text"/>
+         {validate form="submit_link" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+    <tr>
+      <td class="label">{l}Description - Link{/l} 5 : </td>
+      <td class="field">
+         <textarea name="DESCRIPTION5" rows="3" cols="37" class="text"></textarea>
+      </td>
+   </tr>
+   {* End Deeplinks *}
    
    <tr>
       <td class="label"><span class='req'>*</span>{l}Your Name{/l}:</td>
