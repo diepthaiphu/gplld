@@ -76,6 +76,30 @@
          <textarea name="DESCRIPTION" rows="3" cols="37" class="text">{$DESCRIPTION|escape|trim}</textarea>
       </td>
    </tr>
+   {* For Deeplinks *}
+   {section name=deeplink start=1 loop=5 step=1}
+   <tr>
+      <td class="label">{l}Title - Additional Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="field">
+         <input type="text" name="TITLE{$smarty.section.deeplink.index}" value="" size="40" maxlength="255" class="text" />
+         {validate form="submit_link" id="v_DEEPLINK_URL" message=$smarty.capture.invalid_url}
+      </td>
+   </tr>
+   <tr>
+      <td class="label">{l}URL - Additional Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="field">
+         <input type="text" name="URL{$smarty.section.deeplink.index}" value="" size="40" maxlength="255" class="text"/>
+      </td>
+   </tr>
+    <tr>
+      <td class="label">{l}Description - Additional Link{/l} {$smarty.section.deeplink.index} : </td>
+      <td class="field">
+         <textarea name="DESCRIPTION{$smarty.section.deeplink.index}" rows="3" cols="37" class="text"></textarea>
+      </td>
+   </tr>
+ 
+   {/section}
+   
    <tr>
       <td class="label"><span class='req'>*</span>{l}Your Name{/l}:</td>
       <td class="field">
