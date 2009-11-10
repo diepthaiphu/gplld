@@ -158,7 +158,7 @@ switch ($action)
 		 
 		 // Deeplink URL Validation
 	     for($dl=1; $dl<=5; $dl++)
-	     SmartyValidate :: register_validator('v_DEEPLINK_URL' . $dl, 'URL' . $dl, 'isURL' , true, false, 'trim', 'submit_link');
+	     SmartyValidate :: register_validator('v_DEEPLINK_URL' . $dl, 'URL' . $dl, 'isURL' , true, false, 'trim', 'dir_links_edit');
 		}
       else
       {
