@@ -155,6 +155,10 @@ switch ($action)
          SmartyValidate :: register_validator('v_OWNER_NAME', 'OWNER_NAME', 'notEmpty', true , false, 'trim', 'dir_links_edit');
          SmartyValidate :: register_validator('v_OWNER_EMAIL', 'OWNER_EMAIL', 'isEmail', true , false, 'trim', 'dir_links_edit');
          SmartyValidate :: register_validator('v_EXPIRY_DATE', 'EXPIRY_DATE', 'isDate', true , false, 'trim', 'dir_links_edit');
+		 
+		 // Deeplink URL Validation
+	     for($dl=1; $dl<=5; $dl++)
+	     SmartyValidate :: register_validator('v_DEEPLINK_URL' . $dl, 'URL' . $dl, 'isURL' , true, false, 'trim', 'submit_link');
 		}
       else
       {
