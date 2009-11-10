@@ -5,7 +5,7 @@
 @import "css/drop-downs.css";
 @import "css/screen.css";
 
-th{font-weight:normal;}
+th{font-weight:normal;vertical-align:top;}
 .news .date{ margin-right:10px;}
 /* #TODO */
 .tt{display:none;}
@@ -17,3 +17,7 @@ div#container{min-height:600px;height:auto !important;height:600px;}
 #navigation{background:#EEEDEA none repeat scroll 0 0;padding:10px;}
 #page-nav li a:hover{background:#a2a4a5;color:#fff;text-decoration:none;}
 #page-nav li ul {border:none; line-height:normal; background:#EEEDEA;}
+
+/* Link Edit Page */
+.pop, .pop-list{width:100px;display:block;}
+.pop-list{display:none;position:absolute;background:#eee;padding:7px}
