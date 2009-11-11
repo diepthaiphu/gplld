@@ -1078,7 +1078,7 @@ function send_payment_notifications($pdata, $ldata)
    $sent = $mail->Send();
 }
 
-function date_add($timestamp, $months)
+function add_date($timestamp, $months)
 {
 	$d = getdate($timestamp);
 	$mon = $months % 12;
@@ -1110,7 +1110,7 @@ function calculate_expiry_date($start, $units, $um)
 	}
 	if ($mul != 0)
    {
-		return date_add($start, $units * $mul);
+		return add_date($start, $units * $mul);
 	}
 	return 0;
 }
