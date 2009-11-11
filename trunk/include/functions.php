@@ -333,7 +333,7 @@ function get_category($uri = NULL) {
       {
 			$path = substr ($path, 0, $qp);
 		}
-		$path = split ('/', $path);
+		$path = explode ('/', $path);
 		$id = 0;
 		foreach ($path as $cat)
       {
@@ -521,7 +521,7 @@ function get_url($url, $what = 0, $referer = "", $cookies = array (), $useragent
             $header = @ fgets ($fp, 2048);
             if ($header == "\r\n" || $header == "\n" || $header == "\n\l")
                break;
-            list ($key, $value) = split(':', $header, 2);
+            list ($key, $value) = explode(':', $header, 2);
             if (trim ($key) == 'Set-Cookie')
             {
                $value = trim ($value);
@@ -592,7 +592,7 @@ function parse_news($str)
 {
    $str = str_replace ("\r\n", "\n", $str);
    $str = str_replace ("\r", "\n", $str);
-   $str = split ("\n", $str);
+   $str = explode ("\n", $str);
    $news = array ();
    $len = count ($str);
    $i = 0;
