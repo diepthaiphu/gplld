@@ -12,6 +12,7 @@ th{font-weight:normal;vertical-align:top;}
 #content{margin-top:10px;}
 
 div#container{min-height:600px;height:auto !important;height:600px;}
+#page-nav li{margin-right:0;}
 #page-nav li a{background:#EEEDEA none repeat scroll 0 0;border:none;color:#4B353E;-moz-border-radius:8px;-webkit-border-radius:8px;line-height:normal;}
 #page-nav li ul a {-moz-border-radius:none;-webkit-border-radius:none;}
 #navigation{background:#EEEDEA none repeat scroll 0 0;padding:10px;}
