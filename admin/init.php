@@ -198,7 +198,7 @@ if (($ptmp = strrpos ($f, '.')) !== false)
 }
 
 define('SCRIPT_NAME', $f);
-$ptmp = split ('_', $f, 2);
+$ptmp = explode ('_', $f, 2);
 if (count ($ptmp) > 1)
 {
 	$t = $menu[$p[0]]['menu'][$ptmp[1]];
