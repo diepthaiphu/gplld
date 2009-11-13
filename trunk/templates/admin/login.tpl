@@ -7,6 +7,11 @@
    
    {* CSS Style file *}
    <link rel="stylesheet" type="text/css" href="{$smarty.const.DOC_ROOT}/../templates/admin/style.css" />
+   <link rel="stylesheet" type="text/css" href="{$smarty.const.DOC_ROOT}/../templates/admin/jqtransform/jqtransform.css" />
+   {* jQuery & JS File *}
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js" type="text/javascript"></script>
+   <script src="{$smarty.const.DOC_ROOT}/../templates/admin/jqtransform/jquery.jqtransform.js" type="text/javascript"></script>
+   <script src="{$smarty.const.DOC_ROOT}/../templates/admin/js/script.js" type="text/javascript"></script>
 </head>
 <body style="vertical-align:middle">
 {* Error and confirmation messages *}
