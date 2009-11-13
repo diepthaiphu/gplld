@@ -10,5 +10,8 @@ $('.pop').each(function() {
 		popList.css("display", "none");
 	})
 }
-)
+);
+
+$('form').jqTransform();
+
 });
