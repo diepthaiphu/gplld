@@ -11,7 +11,7 @@ th{font-weight:normal;vertical-align:top;}
 /* #TODO */
 span.tt{display:none;}
 div.tt{display:none;position:absolute;width:400px;background:#f6f6f6;}
-div.tt table{margin-bottom:0;}
+div.tt table{margin:0;}
 
 #content{margin-top:10px;}
 
