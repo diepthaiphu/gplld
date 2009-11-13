@@ -52,7 +52,7 @@ if ($sv > $cv)
 }
 else
 {
-   $version = _L('Your installation is up to date, no updates are available for your version of phpLinkDirectory.');
+   $version = _L('Your installation is up to date, no updates are available for your version of gplLD.');
    $tpl->assign('update_available', 0);
 }
 
