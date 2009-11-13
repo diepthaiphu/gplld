@@ -5,6 +5,7 @@
 @import "css/drop-downs.css";
 @import "css/screen.css";
 
+table{margin-top:30px;}
 th{font-weight:normal;vertical-align:top;}
 .news .date{ margin-right:10px;}
 /* #TODO */
