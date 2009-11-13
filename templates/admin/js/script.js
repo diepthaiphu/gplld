@@ -8,7 +8,7 @@ $('.pop').each(function() {
 }
 );
 
-$('a.htt').each(function()
+$('div.tt').siblings('a.htt').each(function()
 {
 	var htt = $(this);
 	var tt = htt.siblings('.tt');
