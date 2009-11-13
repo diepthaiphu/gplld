@@ -1,9 +1,14 @@
- $(document).ready(function() {
-   // do stuff when DOM is ready
-   $('.pop').hover(function(){
-   	// mouseover
-	$(this).parent().children('.pop-list').css("display", "block");
-   }, function(){
-    $(this).parent().children('.pop-list').css("display", "none");
-   })
- });
+$(document).ready(function() {
+
+$('.pop').each(function() {
+	var pop = $(this);
+	var popList = $(this).parent().children('.pop-list');
+	$(this).hover(function(){
+		popList.css("display", "block");
+	}, function(){})
+	popList.hover(function(){}, function(){
+		popList.css("display", "none");
+	})
+}
+)
+});
