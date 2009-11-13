@@ -22,3 +22,7 @@ div#container{min-height:600px;height:auto !important;height:600px;}
 /* Link Edit Page */
 .pop, .pop-list{width:100px;display:block;}
 .pop-list{display:none;position:absolute;background:#eee;padding:7px}
+
+/* Navigation Styles */
+#navigation {position:absolute;left:0;margin:0;}
+#header-container{margin-top:100px;}
