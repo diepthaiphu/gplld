@@ -46,7 +46,7 @@ $tpl->clear_compiled_tpl();
 @ header ('Cache-Control: post-check=0, pre-check=0', false);
 @ header ('Pragma: no-cache');                                     // HTTP 1.0
 
-if (empty ($_POST['submit']))
+if (empty ($_POST['user']))
 {
    SmartyValidate :: connect($tpl);
    SmartyValidate :: register_form('login', true);
