@@ -20,10 +20,10 @@
 	</div>
 </div>
 <div id="header-container">
-	<div id="header">
-
+   <div id="header">
+	  <h1 id="site-title">gplLD Administration Panel</h1>
    {if !empty($title)}
-      <h1 id="site-title">{$title|escape|trim}</h1>
+      <h2 id="site-description">{$title|escape|trim}</h2>
    {/if}
    </div>
 </div>
