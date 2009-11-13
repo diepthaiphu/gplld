@@ -8,7 +8,10 @@
 th{font-weight:normal;vertical-align:top;}
 .news .date{ margin-right:10px;}
 /* #TODO */
-.tt{display:none;}
+span.tt{display:none;}
+div.tt{display:none;position:absolute;width:400px;background:#f6f6f6;}
+div.tt table{margin-bottom:0;}
+
 #content{margin-top:10px;}
 
 div#container{min-height:600px;height:auto !important;height:600px;}
