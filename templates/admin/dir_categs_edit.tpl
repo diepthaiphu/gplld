@@ -10,7 +10,7 @@
 {/if}
 {if not $id}
 {if $posted}
-<div class="msg">
+<div class="alert">
 {l}Category saved.{/l}
 </div>
 {/if}

@@ -3,7 +3,7 @@
 
 {strip}
 {if $posted}
-   <div class="msg">
+   <div class="alert">
       {l}Profile updated.{/l}
    </div>
 {/if}
