@@ -7,7 +7,7 @@
 {/php}
 
 {if $posted}
-   <div class="msg">
+   <div class="alert">
       {l}Settings updated.{/l}
    </div>
 {/if}

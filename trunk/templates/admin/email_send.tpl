@@ -1,6 +1,6 @@
 {strip}
 {if $posted}
-<div class="msg">
+<div class="alert">
 {l}Email was sent.{/l}
 </div>
 <table border="0" class="formPage" width="100%">

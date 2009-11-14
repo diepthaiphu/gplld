@@ -12,7 +12,7 @@
 {/if}
 
 {if $posted}
-   <div class="msg">
+   <div class="alert">
       {l}{$posted|escape}{/l}
    </div>
 {/if}
