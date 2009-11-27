@@ -47,5 +47,5 @@ input[type=radio]{background:none;border:none}
 /* ReCaptcha Fix */
 #reCaptcha label{line-height:normal;}
 /* Search Bar fix */
-#search input{padding:0; margin:0;}
+#search input{padding:5px; margin:0; font-size:1em;}
 #search input.text{width:200px;}
