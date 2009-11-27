@@ -30,10 +30,7 @@
 		<fieldset>
 			<legend>Submission Guidelines</legend>
 			<ul>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
+				<li>Submit your link to the most appropriate category.</li>
 			</ul>
 		</fieldset>
 	
@@ -41,20 +38,20 @@
 		<fieldset>
 			<legend>{l}Pricing{/l}:</legend>
 			{if $price.featured}
-				<input type="radio" name="LINK_TYPE" value="featured"{if $LINK_TYPE eq 'featured'} checked="true"{/if} />{l}Featured links{/l} ${$price.featured}
+				<input type="radio" name="LINK_TYPE" value="featured"{if $LINK_TYPE eq 'featured'} checked="true"{/if} />{l}Featured links{/l} ${$price.featured}<br/>
 			{/if}
 			{if $price.normal gt 0}
-				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} ${$price.normal}
+				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} ${$price.normal}<br/>
 			{elseif $price.normal eq 0}
-				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} {l}free{/l}
+				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} {l}free{/l}<br/>
 			{/if}
 			{if $price.reciprocal gt 0}
-				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} ${$price.reciprocal}
+				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} ${$price.reciprocal}<br/>
 			{elseif $price.reciprocal eq 0}
-				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} {l}free{/l}
+				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} {l}free{/l}<br/>
 			{/if}
 			{if isset($price.free)}
-				<input type="radio" name="LINK_TYPE" value="free"{if $LINK_TYPE eq 'free'} checked="true"{/if} />{l}Links with nofollow attribute{/l} free
+				<input type="radio" name="LINK_TYPE" value="free"{if $LINK_TYPE eq 'free'} checked="true"{/if} />{l}Links with nofollow attribute{/l} free<br/>
 			{/if}
 			{validate form="submit_link" id="v_LINK_TYPE" message=$smarty.capture.field_link_type}
 		</fieldset>
@@ -173,8 +170,10 @@
 		{validate form="submit_link" id="v_RECPR_ONLINE" message=$smarty.capture.url_not_online}
 		{validate form="submit_link" id="v_RECPR_LINK" message=$smarty.capture.recpr_not_found|replace:'#SITE_URL#':$smarty.const.SITE_URL}
 		<br />
-		<p class="small">{l}To validate the reciprocal link please include the<br />following HTML code in the page at the URL<br />specified above, before submiting this form:{/l}</p>
-		<textarea name="RECPR_TEXT" rows="2" readonly="readonly" cols="37" class="text">&lt;a href="{$smarty.const.SITE_URL}"&gt;{$smarty.const.SITE_NAME}&lt;/a&gt;</textarea>
+		<label for="RECPR_TEXT">
+			{l}To validate the reciprocal link please include the following HTML code in the page at the URL specified above, before submiting this form:{/l}
+		</label>
+		<textarea name="RECPR_TEXT" id="RECPR_TEXT" rows="2" readonly="readonly" cols="37" class="text">&lt;a href="{$smarty.const.SITE_URL}"&gt;{$smarty.const.SITE_NAME}&lt;/a&gt;</textarea>
 	
 		{if $smarty.const.VISUAL_CONFIRM}
 		<div id="reCaptcha">
