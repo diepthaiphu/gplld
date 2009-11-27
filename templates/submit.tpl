@@ -10,228 +10,189 @@
 	<div class="content">
 		{include file="breadcrumb.tpl"}
 		
-<form method="post" action="">
-<table border="0" class="formPage">
-
-{if $error}
-   <tr><td colspan="2" class="err">
-      {l}An error occured while saving the link.{/l}
-      {if !empty($sqlError)}
-         <p>{$sqlError}</p>
-      {/if}
-   </td></tr>
-{/if}
-
-{if $posted}
-   <tr><td colspan="2" class="msg">
-   {l}Link submitted and awaiting approval.{/l}<br />
-   {l}Submit another link.{/l}
-   </td></tr>
-{/if}
-
-{if count($price) gt 0}
-	<tr><td colspan="2" class="price">
-	<strong>{l}Pricing{/l}:</strong><br />
-	<table border="0" cellspacing="0" cellpadding="0">
-	{if $price.featured}
-		<tr><td><input type="radio" name="LINK_TYPE" value="featured"{if $LINK_TYPE eq 'featured'} checked="true"{/if} />{l}Featured links{/l}</td><td>${$price.featured}</td></tr>
-	{/if}
-	{if $price.normal gt 0}
-		<tr><td><input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l}</td><td>${$price.normal}</td></tr>
-	{elseif $price.normal eq 0}
-		<tr><td><input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l}</td><td>{l}free{/l}</td></tr>
-	{/if}
-	{if $price.reciprocal gt 0}
-		<tr><td><input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l}</td><td>${$price.reciprocal}</td></tr>
-	{elseif $price.reciprocal eq 0}
-		<tr><td><input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l}</td><td>{l}free{/l}</td></tr>
-	{/if}
-	{if isset($price.free)}
-		<tr><td><input type="radio" name="LINK_TYPE" value="free"{if $LINK_TYPE eq 'free'} checked="true"{/if} />{l}Links with nofollow attribute{/l}</td><td>free</td></tr>
-	{/if}
-	</table>
-	{validate form="submit_link" id="v_LINK_TYPE" message=$smarty.capture.field_link_type}
-	</td></tr>
-{/if}
-   <tr>
-      <td class="label"><span class='req'>*</span>{l}Title{/l}:</td>
-      <td class="field">
-         <input type="text" name="TITLE" value="{$TITLE|escape|trim}" size="40" maxlength="255" class="text" />
-         {validate form="submit_link" id="v_TITLE" message=$smarty.capture.field_char_required}
-         {validate form="submit_link" id="v_TITLE_U" message=$smarty.capture.title_not_unique}
-      </td>
-   </tr>
-   <tr>
-      <td class="label"><span class='req'>*</span>{l}URL{/l}:</td>
-      <td class="field">
-         <input type="text" name="URL" value="{$URL|escape|trim}" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_URL" message=$smarty.capture.invalid_url}
-         {validate form="submit_link" id="v_URL_ONLINE" message=$smarty.capture.url_not_online}
-         {validate form="submit_link" id="v_URL_U" message=$smarty.capture.url_not_unique}
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}Description{/l}:</td>
-      <td class="field">
-         <textarea name="DESCRIPTION" rows="3" cols="37" class="text">{$DESCRIPTION|escape|trim}</textarea>
-      </td>
-   </tr>
-   {* For Deeplinks *}
-   <tr>
-      <td class="label">{l}Title - Link{/l} 1 : </td>
-      <td class="field">
-         <input type="text" name="TITLE1" value="" size="40" maxlength="255" class="text" />
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}URL - Link{/l} 1 : </td>
-      <td class="field">
-         <input type="text" name="URL1" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
-      </td>
-   </tr>
-    <tr>
-      <td class="label">{l}Description - Link{/l} 1 : </td>
-      <td class="field">
-         <textarea name="DESCRIPTION1" rows="3" cols="37" class="text"></textarea>
-      </td>
-   </tr>
-   
-   <tr>
-      <td class="label">{l}Title - Link{/l} 2 : </td>
-      <td class="field">
-         <input type="text" name="TITLE2" value="" size="40" maxlength="255" class="text" />
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}URL - Link{/l} 2 : </td>
-      <td class="field">
-         <input type="text" name="URL2" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
-      </td>
-   </tr>
-    <tr>
-      <td class="label">{l}Description - Link{/l} 2 : </td>
-      <td class="field">
-         <textarea name="DESCRIPTION2" rows="3" cols="37" class="text"></textarea>
-      </td>
-   </tr>
-   
-   <tr>
-      <td class="label">{l}Title - Link{/l} 3 : </td>
-      <td class="field">
-         <input type="text" name="TITLE3" value="" size="40" maxlength="255" class="text" />
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}URL - Link{/l} 3 : </td>
-      <td class="field">
-         <input type="text" name="URL3" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
-      </td>
-   </tr>
-    <tr>
-      <td class="label">{l}Description - Link{/l} 3 : </td>
-      <td class="field">
-         <textarea name="DESCRIPTION3" rows="3" cols="37" class="text"></textarea>
-      </td>
-   </tr>
-   
-   <tr>
-      <td class="label">{l}Title - Link{/l} 4 : </td>
-      <td class="field">
-         <input type="text" name="TITLE4" value="" size="40" maxlength="255" class="text" />
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}URL - Link{/l} 4 : </td>
-      <td class="field">
-         <input type="text" name="URL4" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
-      </td>
-   </tr>
-    <tr>
-      <td class="label">{l}Description - Link{/l} 4 : </td>
-      <td class="field">
-         <textarea name="DESCRIPTION4" rows="3" cols="37" class="text"></textarea>
-      </td>
-   </tr>
-   
-   <tr>
-      <td class="label">{l}Title - Link{/l} 5 : </td>
-      <td class="field">
-         <input type="text" name="TITLE5" value="" size="40" maxlength="255" class="text" />
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{l}URL - Link{/l} 5 : </td>
-      <td class="field">
-         <input type="text" name="URL5" value="" size="40" maxlength="255" class="text"/>
-         {validate form="submit_link" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
-      </td>
-   </tr>
-    <tr>
-      <td class="label">{l}Description - Link{/l} 5 : </td>
-      <td class="field">
-         <textarea name="DESCRIPTION5" rows="3" cols="37" class="text"></textarea>
-      </td>
-   </tr>
-   {* End Deeplinks *}
-   
-   <tr>
-      <td class="label"><span class='req'>*</span>{l}Your Name{/l}:</td>
-      <td class="field">
-         <input type="text" name="OWNER_NAME" value="{$OWNER_NAME|escape|trim}" size="40" maxlength="255" class="text" />
-         {validate form="submit_link" id="v_OWNER_NAME" message=$smarty.capture.field_char_required}
-      </td>
-   </tr>
-   <tr>
-      <td class="label"><span class='req'>*</span>{l}Your Email{/l}:</td>
-      <td class="field">
-         <input type="text" name="OWNER_EMAIL" value="{$OWNER_EMAIL|escape|trim}" size="40" maxlength="255" class="text" />
-         {validate form="submit_link" id="v_OWNER_EMAIL" message=$smarty.capture.invalid_email}
-      </td>
-   </tr>
-   <tr>
-   <td class="label"><span class='req'>*</span>{l}Category{/l}:</td>
-      <td class="field">
-         {html_options options=$categs selected=$CATEGORY_ID name="CATEGORY_ID"}
-         {validate form="submit_link" id="v_CATEGORY_ID" message=$smarty.capture.no_url_in_top}
-      </td>
-   </tr>
-   <tr>
-      <td class="label">{if $recpr_required}<span class='req'>*</span>{/if}{l}Reciprocal Link URL{/l}:</td>
-      <td class="field">
-         <input type="text" name="RECPR_URL" value="{$RECPR_URL|escape|trim}" size="40" maxlength="255" class="text" />
-         {validate form="submit_link" id="v_RECPR_URL" message=$smarty.capture.invalid_url}
-         {validate form="submit_link" id="v_RECPR_ONLINE" message=$smarty.capture.url_not_online}
-         {validate form="submit_link" id="v_RECPR_LINK" message=$smarty.capture.recpr_not_found|replace:'#SITE_URL#':$smarty.const.SITE_URL}
-         <br />
-         <p class="small">{l}To validate the reciprocal link please include the<br />following HTML code in the page at the URL<br />specified above, before submiting this form:{/l}</p>
-         <textarea name="RECPR_TEXT" rows="2" readonly="readonly" cols="37" class="text">&lt;a href="{$smarty.const.SITE_URL}"&gt;{$smarty.const.SITE_NAME}&lt;/a&gt;</textarea>
-      </td>
-   </tr>
-
-   {if $smarty.const.VISUAL_CONFIRM}
-   <tr>
-      <td colspan=2>
+	<form method="post" action="">
+		{if $error}
+			<div class="notice">
+			{l}An error occured while saving the link.{/l}
+			{if !empty($sqlError)}
+				<p>{$sqlError}</p>
+			{/if}
+			</div>
+		{/if}
+	
+		{if $posted}
+			<div class="download">
+			{l}Link submitted and awaiting approval.{/l}<br />
+			{l}Submit another link.{/l}
+			</div>
+		{/if}
+	
+		<fieldset>
+			<legend>Submission Guidelines</legend>
+			<ul>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</fieldset>
+	
+		{if count($price) gt 0}
+		<fieldset>
+			<legend>{l}Pricing{/l}:</legend>
+			{if $price.featured}
+				<input type="radio" name="LINK_TYPE" value="featured"{if $LINK_TYPE eq 'featured'} checked="true"{/if} />{l}Featured links{/l} ${$price.featured}
+			{/if}
+			{if $price.normal gt 0}
+				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} ${$price.normal}
+			{elseif $price.normal eq 0}
+				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} {l}free{/l}
+			{/if}
+			{if $price.reciprocal gt 0}
+				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} ${$price.reciprocal}
+			{elseif $price.reciprocal eq 0}
+				<input type="radio" name="LINK_TYPE" value="reciprocal"{if $LINK_TYPE eq 'reciprocal'} checked="true"{/if} />{l}Regular links with reciprocal{/l} {l}free{/l}
+			{/if}
+			{if isset($price.free)}
+				<input type="radio" name="LINK_TYPE" value="free"{if $LINK_TYPE eq 'free'} checked="true"{/if} />{l}Links with nofollow attribute{/l} free
+			{/if}
+			{validate form="submit_link" id="v_LINK_TYPE" message=$smarty.capture.field_link_type}
+		</fieldset>
+		{/if}
+	
+		<label for="title">
+			<span class='req'>*</span>{l}Title{/l}:
+		</label>
+		<input type="text" id="title" name="TITLE" value="{$TITLE|escape|trim}" size="40" maxlength="255" class="text" />
+		{validate form="submit_link" id="v_TITLE" message=$smarty.capture.field_char_required}
+		{validate form="submit_link" id="v_TITLE_U" message=$smarty.capture.title_not_unique}
+	
+		<label for="URL">
+			<span class='req'>*</span>{l}URL{/l}:
+		</label>
+	
+		<input type="text" id="URL" name="URL" value="{$URL|escape|trim}" size="40" maxlength="255" class="text"/>
+		{validate form="submit_link" id="v_URL" message=$smarty.capture.invalid_url}
+		{validate form="submit_link" id="v_URL_ONLINE" message=$smarty.capture.url_not_online}
+		{validate form="submit_link" id="v_URL_U" message=$smarty.capture.url_not_unique}
+	
+		{* For Deeplinks *}
+		<fieldset>
+			<legend>Deep Links</legend>
+			<label for="title1">
+				{l}Title 1{/l}:
+			</label>
+			<input type="text" id="title1" name="TITLE1" value="{$TITLE1|escape|trim}" size="40" maxlength="255" class="text" />
+	
+			<label for="URL1">
+				{l}URL 1{/l}:
+			</label>
+			<input type="text" id="URL1" name="URL1" value="{$URL1|escape|trim}" size="40" maxlength="255" class="text"/>
+			{validate form="submit_link" id="v_DEEPLINK_URL1" message=$smarty.capture.invalid_url}
+	
+	
+			<label for="title2">
+				{l}Title 2{/l}:
+			</label>
+			<input type="text" id="title2" name="TITLE2" value="{$TITLE2|escape|trim}" size="40" maxlength="255" class="text" />
+	
+			<label for="URL2">
+				{l}URL 2{/l}:
+			</label>
+			<input type="text" id="URL2" name="URL2" value="{$URL2|escape|trim}" size="40" maxlength="255" class="text"/>
+			{validate form="submit_link" id="v_DEEPLINK_URL2" message=$smarty.capture.invalid_url}
+	
+	
+			<label for="title3">
+				{l}Title 3{/l}:
+			</label>
+			<input type="text" id="title3" name="TITLE3" value="{$TITLE3|escape|trim}" size="40" maxlength="255" class="text" />
+	
+			<label for="URL3">
+				{l}URL 3{/l}:
+			</label>
+			<input type="text" id="URL3" name="URL3" value="{$URL3|escape|trim}" size="40" maxlength="255" class="text"/>
+			{validate form="submit_link" id="v_DEEPLINK_URL3" message=$smarty.capture.invalid_url}
+	
+	
+			<label for="title4">
+				{l}Title 4{/l}:
+			</label>
+			<input type="text" id="title4" name="TITLE4" value="{$TITLE4|escape|trim}" size="40" maxlength="255" class="text" />
+	
+			<label for="URL4">
+				{l}URL 4{/l}:
+			</label>
+			<input type="text" id="URL4" name="URL4" value="{$URL4|escape|trim}" size="40" maxlength="255" class="text"/>
+			{validate form="submit_link" id="v_DEEPLINK_URL4" message=$smarty.capture.invalid_url}
+	
+	
+			<label for="title5">
+				{l}Title 5{/l}:
+			</label>
+			<input type="text" id="title5" name="TITLE5" value="{$TITLE5|escape|trim}" size="40" maxlength="255" class="text" />
+	
+			<label for="URL5">
+				{l}URL 5{/l}:
+			</label>
+			<input type="text" id="URL5" name="URL5" value="{$URL5|escape|trim}" size="40" maxlength="255" class="text"/>
+			{validate form="submit_link" id="v_DEEPLINK_URL5" message=$smarty.capture.invalid_url}
+		</fieldset>
+		{* End Deeplinks *}
+	
+		<label for="DESCRIPTION">
+			{l}Description{/l}:
+		</label>
+	
+		<textarea id="DESCRIPTION" name="DESCRIPTION" rows="3" cols="37" class="text">{$DESCRIPTION|escape|trim}</textarea>
+	
+	
+		<label for="OWNER_NAME">
+			<span class='req'>*</span>{l}Your Name{/l}:
+		</label>
+		<input type="text" id="OWNER_NAME" name="OWNER_NAME" value="{$OWNER_NAME|escape|trim}" size="40" maxlength="255" class="text" />
+		{validate form="submit_link" id="v_OWNER_NAME" message=$smarty.capture.field_char_required}
+	
+		<label for="OWNER_EMAIL">
+			<span class='req'>*</span>{l}Your Email{/l}:
+		</label>
+		<input type="text" id="OWNER_EMAIL" name="OWNER_EMAIL" value="{$OWNER_EMAIL|escape|trim}" size="40" maxlength="255" class="text" />
+		{validate form="submit_link" id="v_OWNER_EMAIL" message=$smarty.capture.invalid_email}
+	
+		<label for="CATEGORY_ID">
+			<span class='req'>*</span>{l}Category{/l}:
+		</label>
+		{html_options options=$categs selected=$CATEGORY_ID name="CATEGORY_ID" id="CATEGORY_ID"}
+		{validate form="submit_link" id="v_CATEGORY_ID" message=$smarty.capture.no_url_in_top}
+	
+	
+	
+		<label for="RECPR_URL">{if $recpr_required}<span class='req'>*</span>{/if}{l}Reciprocal Link URL{/l}:</label>
+		<input type="text" name="RECPR_URL" id="RECPR_URL" value="{$RECPR_URL|escape|trim}" size="40" maxlength="255" class="text" />
+		{validate form="submit_link" id="v_RECPR_URL" message=$smarty.capture.invalid_url}
+		{validate form="submit_link" id="v_RECPR_ONLINE" message=$smarty.capture.url_not_online}
+		{validate form="submit_link" id="v_RECPR_LINK" message=$smarty.capture.recpr_not_found|replace:'#SITE_URL#':$smarty.const.SITE_URL}
+		<br />
+		<p class="small">{l}To validate the reciprocal link please include the<br />following HTML code in the page at the URL<br />specified above, before submiting this form:{/l}</p>
+		<textarea name="RECPR_TEXT" rows="2" readonly="readonly" cols="37" class="text">&lt;a href="{$smarty.const.SITE_URL}"&gt;{$smarty.const.SITE_NAME}&lt;/a&gt;</textarea>
+	
+		{if $smarty.const.VISUAL_CONFIRM}
 		<div id="reCaptcha">
 			<div>
-			{if isset($reCaptchaError) && $reCaptchaError ne 1}
-				<div class="error">{l}Invalid Input{/l}</div>
-			{/if}
-		   {recaptcha error=$reCaptchaError}
-		   </div>
+				{if isset($reCaptchaError) && $reCaptchaError ne 1}
+				<div class="error">
+					{l}Invalid Input{/l}
+				</div>
+				{/if}
+			{recaptcha error=$reCaptchaError}
+			</div>
 		</div>
-	  </td>
-   </tr>
-   {/if}
-
-   <tr>
-      <td colspan="2" class="buttons"><input type="submit" name="submit" value="{l}Continue{/l}" class="btn" /></td>
-   </tr>
-</table>
-</form>
+		{/if}
+	
+		<br/>
+		<input type="submit" name="submit" value="{l}Continue{/l}" class="submit" />
+	</form>
+	
 </div> <!-- .content -->
 	
 {include file="sidebar.tpl"}
