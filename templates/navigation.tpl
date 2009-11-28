@@ -3,6 +3,19 @@
 		<div id="page-nav">
 			<ul class="menu">
 				<li>
+					<a href="{$smarty.const.DOC_ROOT}/">Home</a>
+				</li>
+				<li>
+					<a>Browse</a>
+					<ul>
+						{foreach from=$topcats item=cat name=categs}
+							<li><a href="{$smarty.const.DOC_ROOT}/{if $smarty.const.ENABLE_REWRITE}{$cat.TITLE_URL|escape}/{else}index.php?c={$cat.ID}{/if}">
+								{$cat.TITLE|escape}
+							</a></li>
+						{/foreach}
+					</ul>
+				</li>
+				<li>
 					<a href="{$smarty.const.DOC_ROOT}/submit.php{if !empty ($category.ID) and $category.ID > 0}?c={$category.ID}{/if}" title="{l}Submit your link to the directory{/l}">{l}Submit Link{/l}</a>
 				</li>
 				<li>
