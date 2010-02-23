@@ -57,6 +57,13 @@ if (PAY_ENABLE == '1' && PAYPAL_ACCOUNT != '')
 			$price['free'] = 0;
 		}
 	}
+	
+   if (FTR_ENABLE == 1 && PAY_FEATURED_PLUS > 0)
+      $price['featured_plus'] = PAY_FEATURED_ADV;
+      
+   if (PAY_NORMAL_PLUS > 0)
+      $price['normal_plus'] = PAY_NORMAL_PLUS;
+      
 	if (PAY_RECPR > 0)
    {
 		$price['reciprocal'] = PAY_RECPR;
@@ -203,7 +210,7 @@ else
 			case 'free':
 				$data['NOFOLLOW'] = 1;
 				break;
-			case 'featured':
+			case 'featured': case 'featured_plus'
 				$data['FEATURED'] = 1;
 				break;
 		}

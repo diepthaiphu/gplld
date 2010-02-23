@@ -202,6 +202,8 @@ $tables = array();
       array ('ID' => 'PAY_NORMAL'               , 'VALUE' => '0'                          ),
       array ('ID' => 'PAY_FEATURED'             , 'VALUE' => '0'                          ),
       array ('ID' => 'PAY_RECPR'                , 'VALUE' => '0'                          ),
+      array ('ID' => 'PAY_NORMAL_PLUS'			, 'VALUE' => '0'                          ),
+      array ('ID' => 'PAY_FEATURED_PLUS'			, 'VALUE' => '0'                          ),
       array ('ID' => 'PAY_AUTO_ACCEPT'          , 'VALUE' => ''                           ),
       array ('ID' => 'PAY_ENABLE_FREE'          , 'VALUE' => '0'                          ),
       array ('ID' => 'PAYPAL_ENABLE'            , 'VALUE' => '0'                          ),

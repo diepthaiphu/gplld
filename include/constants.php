@@ -36,8 +36,8 @@ $ALLOW_FOREIGN_REFERER = 0;
 
 $email_tpl_types = array( '1' => _L('Emailer'), '2' => _L('Link Owner Notif.'), '3' => _L('Email and Add Link'));
 $payment_um = array('1' => _L('Month'),'2' => _L('Trimester'), '3' => _L('Semester'), '4' => _L('Year'), '5' => _L('Unlimited'));
-$link_type_int = array( 'none' => 0, 'free' => 1, 'normal' => 2, 'reciprocal' => 3, 'featured' => 4);
-$link_type_str = array( 0 => _L('None'), 1 => _L('Free'), 2 => _L('Normal'), 3 => _L('Reciprocal'), 4 => _L('Featured'));
+$link_type_int = array( 'none' => 0, 'free' => 1, 'normal' => 2, 'reciprocal' => 3, 'featured' => 4, 'normal_plus' => 5, 'featured_plus' => 6);
+$link_type_str = array( 0 => _L('None'), 1 => _L('Free'), 2 => _L('Normal'), 3 => _L('Reciprocal'), 4 => _L('Featured'), 5 => _L('Normal+'), 6 => _L('Featured+'));
 $notif_msg = array(
 	'submit' => array(
 		'SUBJECT' => 'New link submited at {MY_SITE_URL}',
