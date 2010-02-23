@@ -49,3 +49,5 @@ input[type=radio]{background:none;border:none}
 /* Search Bar fix */
 #search input{padding:5px; margin:0; font-size:1em;}
 #search input.text{width:200px;}
+
+#page-nav ul ul li {width:175%;}
