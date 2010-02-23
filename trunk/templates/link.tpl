@@ -24,7 +24,7 @@
 </span>
 <p>
 	{$link.DESCRIPTION|escape|trim}
-	<a href="#" class="read-more">Read More</a>
+	<a href="{$smarty.const.DOC_ROOT}/{$link.CATEGORY_URL|escape|trim}{$link.TITLE|escape|trim|replace:' ':'-'}-{$link.ID}.html"> class="read-more">Read More</a>
 </p>
 </div>
 </div>

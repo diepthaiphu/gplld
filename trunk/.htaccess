@@ -27,6 +27,13 @@ DirectoryIndex index.php
 <IfModule mod_rewrite.c>
    RewriteEngine On
 
+   ## Link Details
+   RewriteRule %{REQUEST_URI} !page-[0-9]+\.html?$
+   RewriteCond %{REQUEST_FILENAME} !-f
+   RewriteCond %{REQUEST_FILENAME} !-d
+   RewriteCond %{REQUEST_FILENAME} !-l
+   RewriteRule ^(.*)\.html$ link-detail.php [NC,QSA,L]
+   
    ## Category redirect
    RewriteCond %{REQUEST_FILENAME} !-f
    RewriteCond %{REQUEST_FILENAME} !-d
