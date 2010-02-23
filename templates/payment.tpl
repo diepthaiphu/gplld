@@ -3,7 +3,7 @@
 {capture assign="description"}{l}Submit a new link to the directory{/l}{/capture}
 
 {include file="header.tpl"}
-{include file="top_bar.tpl"}
+{include file="navigation.tpl"}
 
 {strip}
    {if empty ($ID)}
