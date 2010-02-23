@@ -14,5 +14,14 @@ $path[] = array ('ID' => '0', 'TITLE' => _L('Link Detail'), 'TITLE_URL' => '', '
 
 $tpl->assign('path', $path);
 
+$categs = get_categs_tree(0);
+$tpl->assign('categs', $categs);
+$tpl->assign($data);
+$tpl->assign('LINK_TYPE', $link_type);
+
+/* Top level Categories */
+$topcats = $db->GetAll("SELECT * FROM `{$tables['category']['name']}` WHERE `STATUS` = 2 AND `PARENT_ID` = 0 ORDER BY `TITLE`");
+$tpl->assign('topcats', $topcats);
+
 echo $tpl->fetch('link-detail.tpl');
 ?>
