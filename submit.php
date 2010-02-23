@@ -210,7 +210,7 @@ else
 			case 'free':
 				$data['NOFOLLOW'] = 1;
 				break;
-			case 'featured': case 'featured_plus'
+			case 'featured': case 'featured_plus':
 				$data['FEATURED'] = 1;
 				break;
 		}
