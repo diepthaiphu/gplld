@@ -59,7 +59,7 @@ if (PAY_ENABLE == '1' && PAYPAL_ACCOUNT != '')
 	}
 	
    if (FTR_ENABLE == 1 && PAY_FEATURED_PLUS > 0)
-      $price['featured_plus'] = PAY_FEATURED_ADV;
+      $price['featured_plus'] = PAY_FEATURED_PLUS;
       
    if (PAY_NORMAL_PLUS > 0)
       $price['normal_plus'] = PAY_NORMAL_PLUS;
