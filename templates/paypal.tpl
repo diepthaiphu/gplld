@@ -9,7 +9,7 @@
    <form name="form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
       <input type="hidden" name="cmd" value="_xclick" />
       <input type="hidden" name="business" value="{$smarty.const.PAYPAL_ACCOUNT}" />
-      <input type="hidden" name="item_name" value="Link to {$URL|trim}" />
+      <input type="hidden" name="item_name" value="Link to {$URL|trim} from http://{$smarty.server.SERVER_NAME}{$smarty.const.DOC_ROOT}/" />
       <input type="hidden" name="item_number" value="{$ID}" />
       <input type="hidden" name="amount" value="{$PAYMENT.AMOUNT}" />
       <input type="hidden" name="quantity" value="{$PAYMENT.QUANTITY}" />
