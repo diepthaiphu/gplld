@@ -132,6 +132,8 @@ if (FTR_ENABLE == '1' && PAY_FEATURED > 0)
 {
 	$price[$link_type_int['featured']] = PAY_FEATURED;
 }
+if (FTR_ENABLE == '1' && PAY_FEATURED_PLUS > 0)
+   $price[$link_type_int['featured_plus']] = PAY_FEATURED_PLUS;   
 if (PAY_NORMAL > 0)
 {
 	$price[$link_type_int['normal']] = PAY_NORMAL;
@@ -139,6 +141,10 @@ if (PAY_NORMAL > 0)
    {
 		$price[$link_type_int['free']] = 0;
 	}
+}
+if (PAY_NORMAL_ADV > 0)
+{
+   $price[$link_type_int['normal_plus']] = PAY_NORMAL_PLUS;
 }
 if (PAY_RECPR > 0) {
 	$price[$link_type_int['reciprocal']] = PAY_RECPR;

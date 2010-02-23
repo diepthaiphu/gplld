@@ -37,8 +37,14 @@
 		{if count($price) gt 0}
 		<fieldset>
 			<legend>{l}Pricing{/l}:</legend>
+			{if $price.featured_plus}
+				<input type="radio" name="LINK_TYPE" value="featured_plus"{if $LINK_TYPE eq 'featured_plus'} checked="true"{/if} />{l}Featured+ links{/l} ${$price.featured_plus}<br/>
+			{/if}
 			{if $price.featured}
 				<input type="radio" name="LINK_TYPE" value="featured"{if $LINK_TYPE eq 'featured'} checked="true"{/if} />{l}Featured links{/l} ${$price.featured}<br/>
+			{/if}
+			{if $price.normal_plus gt 0}
+				<input type="radio" name="LINK_TYPE" value="normal_plus"{if $LINK_TYPE eq 'normal_plus'} checked="true"{/if} />{l}Regular+ links{/l} ${$price.normal_plus}<br/>
 			{/if}
 			{if $price.normal gt 0}
 				<input type="radio" name="LINK_TYPE" value="normal"{if $LINK_TYPE eq 'normal'} checked="true"{/if} />{l}Regular links{/l} ${$price.normal}<br/>
