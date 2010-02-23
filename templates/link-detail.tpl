@@ -1,6 +1,6 @@
-{* Calculate title from path *}
-{capture name="title"}
-{/capture}
+{capture name="title"} - {l}Link Details{/l}{/capture}
+{capture assign="in_page_title"}{l}Link Details{/l}{/capture}
+{capture assign="description"}{l}Details for the link{/l}{/capture}
 
 {include file="header.tpl"}
 {include file="navigation.tpl"}
