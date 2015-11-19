@@ -1,0 +1,1 @@
+A powerful, extensible PHP based link directory script licensed under GNU GPL license.
